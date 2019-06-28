@@ -3,6 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "main": "server.js",
+  "pre-commit": [
+    "pretty"
+  ],
+  "author": "Nicholas Cannon",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nicholascannon1/portfolio2.0.git"
+  },
   "scripts": {
     "client-start": "react-scripts start",
     "client-build": "react-scripts build",
@@ -11,7 +19,6 @@
     "dev": "concurrently \"npm run server-start\" \"npm run client-start\" ",
     "start": "node server.js"
   },
-  "author": "Nicholas Cannon",
   "dependencies": {
     "bcrypt": "^3.0.6",
     "chalk": "^2.4.2",
@@ -40,9 +47,6 @@
     "prettier": "^1.18.2",
     "pretty-quick": "^1.11.1"
   },
-  "pre-commit": [
-    "pretty"
-  ],
   "eslintConfig": {
     "extends": "react-app"
   },
