@@ -1,0 +1,3 @@
+/**
+ * Redux action types
+ */
