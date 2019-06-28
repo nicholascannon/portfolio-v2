@@ -2,7 +2,7 @@
 	"name": "portfolio2.0",
 	"version": "0.1.0",
 	"private": true,
-	"main": "server.js",
+	"main": "app.js",
 	"pre-commit": [
 		"pretty"
 	],
@@ -14,10 +14,10 @@
 	"scripts": {
 		"client-start": "react-scripts start",
 		"client-build": "react-scripts build",
-		"server-start": "nodemon server.js",
+		"server-start": "nodemon app.js",
 		"pretty": "pretty-quick --staged",
 		"dev": "concurrently \"npm run server-start\" \"npm run client-start\" ",
-		"start": "node server.js"
+		"start": "node app.js"
 	},
 	"dependencies": {
 		"bcrypt": "^3.0.6",

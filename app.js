@@ -1,5 +1,5 @@
 /**
- * server.js
+ * app.js
  *
  * written by Nicholas Cannon
  */
