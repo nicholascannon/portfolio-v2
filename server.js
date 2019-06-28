@@ -27,6 +27,10 @@ app.set('port', process.env.PORT || 8000);
 /**
  * Connect to Database
  */
+if (!process.env.MONGO_URI) {
+	console.log(`${chalk.red('✗')} Error: no MongoDB URI`);
+	process.exit(0);
+}
 
 /**
  * Middleware
