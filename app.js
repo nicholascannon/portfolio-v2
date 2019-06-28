@@ -23,7 +23,7 @@ console.log(`${chalk.green('✓')} loaded .env file`);
  * Create Application
  */
 const app = express();
-app.set('port', process.env.PORT || 8000);
+app.set('port', process.env.SERVER_PORT || 8000);
 
 /**
  * Connect to Database
@@ -53,7 +53,7 @@ app.use(express.json());
 /**
  * API Routes
  */
-app.get('/', (req, res, next) => {
+app.get('/api/', (req, res, next) => {
 	return res.json({ msg: 'working' });
 });
 app.use('/api/', (req, res, next) => {
@@ -64,7 +64,7 @@ app.use('/api/', (req, res, next) => {
  * Serve frontend in production
  */
 if (process.env.NODE_ENV === 'production') {
-	console.log(`${chalk.yellow('!')} Serving frontend from build file`);
+	console.log(`${chalk.yellow('!')} Serving frontend from build folder`);
 	app.use(express.static(path.resolve(__dirname, 'build')));
 	app.get('*', (req, res) => {
 		return res.sendFile(path.resolve(__dirname, 'build', 'index.html'));

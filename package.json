@@ -20,6 +20,7 @@
 		"start": "node app.js"
 	},
 	"dependencies": {
+		"axios": "^0.19.0",
 		"bcrypt": "^3.0.6",
 		"chalk": "^2.4.2",
 		"compression": "^1.7.4",
@@ -61,6 +62,12 @@
 			"last 1 chrome version",
 			"last 1 firefox version",
 			"last 1 safari version"
+		]
+	},
+	"nodemonConfig": {
+		"ignore": [
+			"public/*",
+			"src/*"
 		]
 	},
 	"proxy": "http://localhost:8000"
