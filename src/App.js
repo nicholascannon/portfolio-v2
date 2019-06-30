@@ -1,6 +1,7 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 import {
 	HomePage,
@@ -11,8 +12,6 @@ import {
 	NotFoundPage
 } from './components/pages';
 import Nav from './components/Nav';
-
-import { closeNav } from './actions/navActions';
 
 import './App.css';
 
@@ -40,17 +39,21 @@ class App extends React.Component {
 
 	render() {
 		return (
-			<Router>
+			<React.Fragment>
 				<Nav />
-				<Switch>
-					<Route exact path="/" component={HomePage} />
-					<Route exact path="/about" component={AboutPage} />
-					<Route exact path="/projects" component={ProjectsPage} />
-					<Route exact path="/skills" component={SkillsPage} />
-					<Route exact path="/contact" component={ContactPage} />
-					<Route component={NotFoundPage} />
-				</Switch>
-			</Router>
+				<TransitionGroup>
+					<CSSTransition timeout={500} classNames="fade" appear>
+						<Switch>
+							<Route key="1" exact path="/" component={HomePage} />
+							<Route key="2" exact path="/about" component={AboutPage} />
+							<Route key="3" exact path="/projects" component={ProjectsPage} />
+							<Route key="4" exact path="/skills" component={SkillsPage} />
+							<Route key="5" exact path="/contact" component={ContactPage} />
+							<Route key="6" component={NotFoundPage} />
+						</Switch>
+					</CSSTransition>
+				</TransitionGroup>
+			</React.Fragment>
 		);
 	}
 }
