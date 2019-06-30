@@ -3,7 +3,7 @@
  */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import { toggleNav, closeNav } from '../actions/navActions';
 
@@ -25,6 +25,8 @@ class Nav extends Component {
 	};
 
 	render() {
+		const path = window.location.pathname;
+
 		return (
 			<nav
 				className={`Nav${this.props.nav.isOpen ? 'Open' : ''}`}
@@ -36,29 +38,45 @@ class Nav extends Component {
 						</button>
 						<ul>
 							<li>
-								<Link to="/" onClick={this.props.closeNav}>
+								<NavLink
+									exact={true}
+									to="/"
+									onClick={this.props.closeNav}
+									activeStyle={{ color: '#005cb9' }}>
 									Home
-								</Link>
+								</NavLink>
 							</li>
 							<li>
-								<Link to="/about" onClick={this.props.closeNav}>
+								<NavLink
+									to="/about"
+									onClick={this.props.closeNav}
+									activeStyle={{ color: '#005cb9' }}>
 									About
-								</Link>
+								</NavLink>
 							</li>
 							<li>
-								<Link to="/projects" onClick={this.props.closeNav}>
+								<NavLink
+									to="/projects"
+									onClick={this.props.closeNav}
+									activeStyle={{ color: '#005cb9' }}>
 									Projects
-								</Link>
+								</NavLink>
 							</li>
 							<li>
-								<Link to="/skills" onClick={this.props.closeNav}>
+								<NavLink
+									to="/skills"
+									onClick={this.props.closeNav}
+									activeStyle={{ color: '#005cb9' }}>
 									Skills
-								</Link>
+								</NavLink>
 							</li>
 							<li>
-								<Link to="/contact" onClick={this.props.closeNav}>
+								<NavLink
+									to="/contact"
+									onClick={this.props.closeNav}
+									activeStyle={{ color: '#005cb9' }}>
 									Contact
-								</Link>
+								</NavLink>
 							</li>
 						</ul>
 					</div>
