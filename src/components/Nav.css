@@ -17,8 +17,8 @@
 
 .NavBox {
 	width: 400px;
-	height: 600px;
-	padding: 2em;
+	height: 80vh;
+	padding: 1em;
 	box-sizing: border-box;
 	border-radius: 5px;
 	background-color: #fff;
@@ -29,6 +29,8 @@
 }
 .NavBox button {
 	float: right;
+	border: none;
+	background-color: transparent;
 }
 .NavBox ul {
 	list-style-type: none;
@@ -44,4 +46,16 @@
 }
 .NavBox a:hover {
 	color: #005cb9;
+}
+
+nav > button {
+	border: none;
+	background-color: transparent;
+}
+.navIcon {
+	cursor: pointer;
+}
+.NavBox .navIcon {
+	width: 25px;
+	height: 25px;
 }
