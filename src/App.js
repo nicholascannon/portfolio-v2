@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import Particels from 'react-particles-js';
 
 import {
 	HomePage,
@@ -40,6 +41,36 @@ class App extends React.Component {
 	render() {
 		return (
 			<React.Fragment>
+				<Particels
+					style={{ position: 'absolute', top: '0', right: '0' }}
+					params={{
+						particles: {
+							number: {
+								value: 10,
+								density: {
+									enabled: false
+								}
+							},
+							size: {
+								value: 50,
+								random: true
+							},
+							opacity: {
+								value: 0.4,
+								anim: {
+									enable: false
+								},
+								random: true
+							},
+							move: {
+								direction: 'right',
+								out_mode: 'out',
+								random: true,
+								bounce: false
+							}
+						}
+					}}
+				/>
 				<Nav />
 				<TransitionGroup>
 					<CSSTransition timeout={500} classNames="fade" appear>
