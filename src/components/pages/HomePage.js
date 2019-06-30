@@ -4,10 +4,16 @@
 import React from 'react';
 import Page from './Page';
 
+import './HomePage.css';
+
 const HomePage = props => {
 	return (
-		<Page className="HomePage">
-			<h1>Home</h1>
+		<Page className="HomePage" isHome={true}>
+			<div id="rect"></div>
+			<div id="headers">
+				<h1>Nicholas Cannon</h1>
+				<p>Software Developer</p>
+			</div>
 		</Page>
 	);
 };

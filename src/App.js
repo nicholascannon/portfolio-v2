@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, withRouter } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import Particels from 'react-particles-js';
@@ -42,7 +42,7 @@ class App extends React.Component {
 		return (
 			<React.Fragment>
 				<Particels
-					style={{ position: 'absolute', top: '0', right: '0' }}
+					style={{ position: 'absolute', top: '0', right: '0', z_index: '-1' }}
 					params={{
 						particles: {
 							number: {

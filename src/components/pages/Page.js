@@ -2,12 +2,33 @@
  * Page.js
  */
 import React from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+
+import { closeNav } from '../../actions/navActions';
 
 import './Page.css';
 
 class Page extends React.Component {
 	render() {
-		return <section className="Page">{this.props.children}</section>;
+		return (
+			<section className="Page">
+				{!this.props.isHome ? (
+					<Link to="/" id="brand">
+						niccannon
+					</Link>
+				) : null}
+				{this.props.children}
+			</section>
+		);
 	}
 }
-export default Page;
+
+const mapStateToProps = state => ({
+	navOpen: state.nav.isOpen
+});
+
+export default connect(
+	mapStateToProps,
+	{ closeNav }
+)(Page);

@@ -4,7 +4,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-
 import { toggleNav, closeNav } from '../actions/navActions';
 
 import './Nav.css';
@@ -19,14 +18,12 @@ class Nav extends Component {
 		document.removeEventListener('mousedown', this.clickedOutside);
 	}
 	clickedOutside = e => {
-		if (this.refNode && !this.refNode.contains(e.target)) {
+		if (this.refNode && !this.refNode.contains(e.target) && this.props.nav.isOpen) {
 			this.props.closeNav();
 		}
 	};
 
 	render() {
-		const path = window.location.pathname;
-
 		return (
 			<nav
 				className={`Nav${this.props.nav.isOpen ? 'Open' : ''}`}
@@ -37,15 +34,6 @@ class Nav extends Component {
 							<img className="navIcon" src={close} />
 						</button>
 						<ul>
-							<li>
-								<NavLink
-									exact={true}
-									to="/"
-									onClick={this.props.closeNav}
-									activeStyle={{ color: '#005cb9' }}>
-									Home
-								</NavLink>
-							</li>
 							<li>
 								<NavLink
 									to="/about"
