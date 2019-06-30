@@ -1,0 +1,47 @@
+.Nav,
+.NavOpen {
+	position: absolute;
+	right: 2em;
+	top: 2em;
+}
+
+.mobile .NavOpen {
+	position: absolute;
+	top: 0;
+	left: 0;
+	box-sizing: border-box;
+	width: 100vw;
+	height: 100vh;
+	padding: 2em;
+}
+
+.NavBox {
+	width: 400px;
+	height: 600px;
+	padding: 2em;
+	box-sizing: border-box;
+	border-radius: 5px;
+	background-color: #fff;
+}
+.mobile .NavBox {
+	width: 100%;
+	height: 80%;
+}
+.NavBox button {
+	float: right;
+}
+.NavBox ul {
+	list-style-type: none;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+.NavBox a {
+	text-decoration: none;
+	color: #111115;
+	font-size: 3em;
+}
+.NavBox a:hover {
+	color: #005cb9;
+}
