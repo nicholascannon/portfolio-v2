@@ -15,7 +15,7 @@ class Page extends React.Component {
 			<section className="Page">
 				{!this.props.isHome ? (
 					<Link to="/" id="brand">
-						niccannon
+						NICHOLAS CANNON
 					</Link>
 				) : null}
 				{this.props.children}

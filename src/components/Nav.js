@@ -25,11 +25,9 @@ class Nav extends Component {
 
 	render() {
 		return (
-			<nav
-				className={`Nav${this.props.nav.isOpen ? 'Open' : ''}`}
-				ref={node => (this.refNode = node)}>
+			<nav className={`Nav${this.props.nav.isOpen ? 'Open' : ''}`}>
 				{this.props.nav.isOpen ? (
-					<div className="NavBox">
+					<div className="NavBox" ref={node => (this.refNode = node)}>
 						<button onClick={this.props.toggleNav}>
 							<img className="navIcon" src={close} />
 						</button>

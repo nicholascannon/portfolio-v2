@@ -1,8 +1,9 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { CSSTransition } from 'react-transition-group';
 import Particels from 'react-particles-js';
+import particleSettings from './particleSettings';
 
 import {
 	HomePage,
@@ -15,6 +16,14 @@ import {
 import Nav from './components/Nav';
 
 import './App.css';
+
+const routes = [
+	{ path: '/', Component: HomePage },
+	{ path: '/about', Component: AboutPage },
+	{ path: '/contact', Component: ContactPage },
+	{ path: '/skills', Component: SkillsPage },
+	{ path: '/projects', Component: ProjectsPage }
+];
 
 class App extends React.Component {
 	constructor(props) {
@@ -43,47 +52,26 @@ class App extends React.Component {
 			<React.Fragment>
 				<Particels
 					style={{ position: 'absolute', top: '0', right: '0', z_index: '-1' }}
-					params={{
-						particles: {
-							number: {
-								value: 10,
-								density: {
-									enabled: false
-								}
-							},
-							size: {
-								value: 50,
-								random: true
-							},
-							opacity: {
-								value: 0.4,
-								anim: {
-									enable: false
-								},
-								random: true
-							},
-							move: {
-								direction: 'right',
-								out_mode: 'out',
-								random: true,
-								bounce: false
-							}
-						}
-					}}
+					params={particleSettings}
 				/>
 				<Nav />
-				<TransitionGroup>
-					<CSSTransition timeout={500} classNames="fade" appear>
-						<Switch>
-							<Route key="1" exact path="/" component={HomePage} />
-							<Route key="2" exact path="/about" component={AboutPage} />
-							<Route key="3" exact path="/projects" component={ProjectsPage} />
-							<Route key="4" exact path="/skills" component={SkillsPage} />
-							<Route key="5" exact path="/contact" component={ContactPage} />
-							<Route key="6" component={NotFoundPage} />
-						</Switch>
-					</CSSTransition>
-				</TransitionGroup>
+				<Switch>
+					{routes.map(({ path, Component }) => (
+						<Route key={path} exact path={path}>
+							{({ match }) => (
+								<CSSTransition
+									in={match != null}
+									timeout={500}
+									classNames="page"
+									unmountOnExit
+									appear>
+									<Component />
+								</CSSTransition>
+							)}
+						</Route>
+					))}
+					<Route key="notfound" component={NotFoundPage} />
+				</Switch>
 			</React.Fragment>
 		);
 	}
@@ -91,7 +79,9 @@ class App extends React.Component {
 
 const mapStateToProps = state => ({});
 
-export default connect(
-	mapStateToProps,
-	{}
-)(App);
+export default withRouter(
+	connect(
+		mapStateToProps,
+		{}
+	)(App)
+);
