@@ -61,3 +61,17 @@ nav > button {
 	width: 25px;
 	height: 25px;
 }
+
+/* Nav transition */
+.navTrans-enter,
+.navTrans-appear {
+	opacity: 0;
+	transform: translate(20em, -20em) scale(0);
+}
+.navTrans-enter-active,
+.navTrans-appear-active {
+	opacity: 1;
+	transform: translate(0em, 0em) scale(1);
+	transition: opacity 500ms, transform 200ms, scale 500ms;
+	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}

@@ -61,7 +61,7 @@ class App extends React.Component {
 							{({ match }) => (
 								<CSSTransition
 									in={match != null}
-									timeout={500}
+									timeout={300}
 									classNames="page"
 									unmountOnExit
 									appear>
