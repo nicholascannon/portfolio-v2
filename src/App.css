@@ -19,3 +19,20 @@
 	transform: scale(0.9);
 	transition: opacity 300ms, transform 300ms;
 }
+
+.social-links {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	z-index: 999;
+	padding: 2em;
+}
+.social-links span {
+	color: #fff;
+	padding-left: 1em;
+}
+
+.social-links span:hover {
+	color: #005cb9;
+	padding-left: 1em;
+}

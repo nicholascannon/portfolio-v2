@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { CSSTransition } from 'react-transition-group';
 import Particels from 'react-particles-js';
 import particleSettings from './particleSettings';
+import FontAwesome from 'react-fontawesome';
 
 import {
 	HomePage,
@@ -72,6 +73,14 @@ class App extends React.Component {
 					))}
 					<Route key="notfound" component={NotFoundPage} />
 				</Switch>
+				<div className="social-links">
+					<a href="https://www.linkedin.com/in/niccannon1" target="_blank">
+						<FontAwesome name="linkedin" size="2x" />
+					</a>
+					<a href="https://github.com/nicholascannon1" target="_blank">
+						<FontAwesome name="github" size="2x" />
+					</a>
+				</div>
 			</React.Fragment>
 		);
 	}
