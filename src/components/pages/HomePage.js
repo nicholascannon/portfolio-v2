@@ -8,7 +8,7 @@ import './HomePage.css';
 
 const HomePage = props => {
 	return (
-		<Page className="HomePage" isHome={true}>
+		<Page pageName="HomePage">
 			<div id="rect"></div>
 			<div id="headers">
 				<h1>Nicholas Cannon</h1>

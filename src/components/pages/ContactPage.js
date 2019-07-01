@@ -6,7 +6,7 @@ import Page from './Page';
 
 const ContactPage = props => {
 	return (
-		<Page className="ContactPage">
+		<Page pageName="ContactPage">
 			<h1>Contact</h1>
 		</Page>
 	);
