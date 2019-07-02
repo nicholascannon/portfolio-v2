@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch, withRouter } from 'react-router-dom';
+import { Route, Switch, withRouter, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { CSSTransition } from 'react-transition-group';
 import Particels from 'react-particles-js';
@@ -52,10 +52,17 @@ class App extends React.Component {
 		return (
 			<React.Fragment>
 				<Particels
-					style={{ position: 'absolute', top: '0', right: '0', z_index: '-1' }}
+					style={{ position: 'fixed', top: '0', right: '0', 'z-index': '-1' }}
 					params={particleSettings}
 				/>
-				<Nav />
+				<header>
+					{this.props.location.pathname !== '/' ? (
+						<Link to="/" id="brand">
+							NICHOLAS CANNON
+						</Link>
+					) : null}
+					<Nav />
+				</header>
 				<Switch>
 					{routes.map(({ path, Component }) => (
 						<Route key={path} exact path={path}>

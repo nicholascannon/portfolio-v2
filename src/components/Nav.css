@@ -1,32 +1,37 @@
-.Nav,
-.NavOpen {
-	position: absolute;
-	right: 2em;
-	top: 2em;
-	z-index: 999;
+nav {
+	float: right;
 }
-
-.mobile .NavOpen {
-	position: absolute;
-	top: 0;
-	left: 0;
-	box-sizing: border-box;
-	width: 100vw;
-	height: 100vh;
-	padding: 2em;
+nav > button {
+	border: none;
+	background-color: transparent;
 }
-.mobile .NavBox {
-	width: 100%;
-	height: 80%;
+.NavOpen button:focus {
+	outline: none;
+}
+.navIcon {
+	cursor: pointer;
+}
+.NavBox .navIcon {
+	width: 25px;
+	height: 25px;
 }
 
 .NavBox {
+	position: absolute;
+	top: 2em;
+	right: 2em;
+	z-index: 999;
 	width: 350px;
 	height: 60vh;
 	padding: 1em;
 	box-sizing: border-box;
 	border-radius: 5px;
 	background-color: #fff;
+}
+.mobile .NavBox {
+	left: 2em;
+	height: 80%;
+	width: auto;
 }
 .NavBox button {
 	float: right;
@@ -48,18 +53,6 @@
 }
 .NavBox a:hover {
 	color: #005cb9;
-}
-
-nav > button {
-	border: none;
-	background-color: transparent;
-}
-.navIcon {
-	cursor: pointer;
-}
-.NavBox .navIcon {
-	width: 25px;
-	height: 25px;
 }
 
 /* Nav transition */

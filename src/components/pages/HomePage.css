@@ -1,5 +1,5 @@
 #rect {
-	position: fixed;
+	position: relative;
 	width: calc(1.25 * 110vw);
 	height: 35vh;
 	background-color: #005cb9;
@@ -9,7 +9,7 @@
 
 #headers {
 	position: relative;
-	top: 20vh;
+	top: -15vh;
 	padding-left: 2.5em;
 }
 #headers h1 {
@@ -21,12 +21,9 @@
 }
 
 /* Mobile sizes */
-.tablet #headers {
-	top: 20vh;
-}
 .mobile #headers {
-	top: 22vh;
-	padding-left: 0.25em;
+	top: -5vh;
+	padding-left: 0;
 }
 .mobile #headers h1 {
 	font-size: 2em;

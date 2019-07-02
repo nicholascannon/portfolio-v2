@@ -27,7 +27,7 @@ class Nav extends Component {
 	render() {
 		return (
 			<nav className={`Nav${this.props.nav.isOpen ? 'Open' : ''}`}>
-				{this.props.nav.isOpen ? (
+				{this.props.nav.isOpen && (
 					<CSSTransition in={this.props.nav.isOpen} classNames="navTrans" timeout={500} appear>
 						<div className="NavBox" ref={node => (this.refNode = node)}>
 							<button onClick={this.props.toggleNav}>
@@ -69,11 +69,10 @@ class Nav extends Component {
 							</ul>
 						</div>
 					</CSSTransition>
-				) : (
-					<button onClick={this.props.toggleNav}>
-						<img className="navIcon" src={menu} />
-					</button>
 				)}
+				<button onClick={this.props.toggleNav}>
+					<img className="navIcon" src={menu} />
+				</button>
 			</nav>
 		);
 	}

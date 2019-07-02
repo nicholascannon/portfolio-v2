@@ -14,11 +14,6 @@ class Page extends React.Component {
 	render() {
 		return (
 			<section className={`Page ${this.props.pageName ? this.props.pageName : ''}`}>
-				{this.props.pageName !== 'HomePage' ? (
-					<Link to="/" id="brand">
-						NICHOLAS CANNON
-					</Link>
-				) : null}
 				{this.props.children}
 			</section>
 		);
