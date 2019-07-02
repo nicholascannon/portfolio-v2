@@ -52,7 +52,7 @@ class App extends React.Component {
 		return (
 			<React.Fragment>
 				<Particels
-					style={{ position: 'fixed', top: '0', right: '0', 'z-index': '-1' }}
+					style={{ position: 'fixed', top: '0', right: '0', zIndex: '-1' }}
 					params={particleSettings}
 				/>
 				<header>

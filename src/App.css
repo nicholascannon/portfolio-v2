@@ -27,11 +27,13 @@ header {
 
 .social-links {
 	flex: 0;
-	align-items: baseline;
+}
+.social-links a {
+	float: right;
 }
 .social-links span {
 	color: #fff;
-	padding-right: 1em;
+	padding-left: 1em;
 }
 
 .social-links span:hover {
