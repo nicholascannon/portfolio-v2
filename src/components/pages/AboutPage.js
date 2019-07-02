@@ -22,6 +22,7 @@ const AboutPage = props => {
 						I'm currently living in Perth, WA and am in my last year of study at the University of
 						Western Australia majoring in Computer and Data Science.
 					</p>
+					<br />
 					<p>
 						I've been writing software and experimenting with different technologies since high
 						school and have always been eager to improve my skills and solve problems with

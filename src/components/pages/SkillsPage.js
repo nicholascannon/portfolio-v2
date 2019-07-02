@@ -3,11 +3,22 @@
  */
 import React from 'react';
 import Page from './Page';
+import skills from '../../imgs/skills';
+
+import './SkillsPage.css';
 
 const SkillsPage = props => {
 	return (
 		<Page pageName="SkillsPage">
-			<h1>Skills</h1>
+			<table className="skillsTable">
+				{skills.map(skill => (
+					<div>
+						<img src={skill.src} />
+						<p>{skill.name}</p>
+					</div>
+				))}
+			</table>
+			<div className="rect"></div>
 		</Page>
 	);
 };

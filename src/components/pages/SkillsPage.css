@@ -1,0 +1,42 @@
+.SkillsPage {
+	display: flex;
+}
+
+.SkillsPage .skillsTable {
+	flex: 1;
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+}
+.SkillsPage .skillsTable div {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+.SkillsPage .skillsTable div img {
+	width: 60%;
+}
+.SkillsPage .skillsTable div p {
+	font-size: 1.5em;
+}
+
+.SkillsPage .rect {
+	position: fixed;
+	z-index: -1;
+	width: calc(1.25 * 100vw);
+	height: 20vh;
+	background-color: #005cb9;
+	transform: translate(-20vw, 200px) rotate(8deg);
+}
+
+.tablet .SkillsPage .skillsTable,
+.mobile .SkillsPage .skillsTable {
+	grid-template-columns: auto auto;
+}
+.tablet .SkillsPage .skillsTable,
+.mobile .SkillsPage .skillsTable {
+	grid-row-gap: 1em;
+}
+.mobile .skillsTable div p {
+	font-size: 1em;
+}
