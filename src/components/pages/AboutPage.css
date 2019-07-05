@@ -1,11 +1,29 @@
 .AboutPage {
 	display: flex;
 }
-
 .AboutPage > div {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+}
+
+.AboutPage .content a {
+	background-color: transparent;
+	color: #fff;
+	padding: 5px 10px 5px 10px;
+	min-width: 25%;
+	margin-right: 5%;
+	font-size: 1em;
+	font-weight: lighter;
+	border: 1px solid #fff;
+	border-radius: 50px;
+	text-decoration: none;
+	text-align: center;
+}
+.AboutPage .content a:hover {
+	background-color: #fff;
+	color: #000000;
+	cursor: pointer;
 }
 
 .AboutPage .profileImg {
@@ -40,6 +58,14 @@
 @media (max-width: 1000px) {
 	.AboutPage > div {
 		flex-direction: column;
+	}
+	.AboutPage .aboutButtons {
+		display: flex;
+		justify-content: space-evenly;
+	}
+	.AboutPage .content a {
+		padding: 10px 10px 10px 10px;
+		margin: 0;
 	}
 }
 @media (max-width: 500px) {

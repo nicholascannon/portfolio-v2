@@ -5,6 +5,7 @@ import React from 'react';
 import Page from './Page';
 
 import profileImg from '../../imgs/profilePic.jpg';
+import resume from '../../docs/Nicholas-Cannon-CV.pdf';
 
 import './AboutPage.css';
 
@@ -28,6 +29,15 @@ const AboutPage = props => {
 						school and have always been eager to improve my skills and solve problems with
 						technology. I also enjoy sports, DJ'ing and making/listening to music.
 					</p>
+					<br />
+					<div className="aboutButtons">
+						<a href={resume} target="_blank">
+							Resume
+						</a>
+						<a href="mailto:nicholascannon1@gmail.com" target="_blank">
+							Email Me
+						</a>
+					</div>
 				</div>
 			</div>
 			<div className="rect"></div>
