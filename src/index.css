@@ -24,3 +24,7 @@ button {
 canvas {
 	z-index: -1;
 }
+
+.mobile {
+	font-size: 0.9em;
+}

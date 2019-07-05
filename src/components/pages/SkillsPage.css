@@ -1,8 +1,10 @@
 .SkillsPage {
 	display: flex;
+	flex-direction: column;
 }
 
 .SkillsPage .skillsTable {
+	align-content: center;
 	flex: 1;
 	display: grid;
 	grid-template-columns: auto auto auto auto;
@@ -12,11 +14,13 @@
 	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
+	padding: 1em 0 1em 0;
 }
 .SkillsPage .skillsTable div img {
 	width: 60%;
 }
 .SkillsPage .skillsTable div p {
+	padding-top: 0.5em;
 	font-size: 1.5em;
 }
 
@@ -29,6 +33,17 @@
 	transform: translate(-20vw, 200px) rotate(8deg);
 }
 
+.SkillsPage .ModalBtnContainer {
+	padding-top: 1em;
+}
+.SkillsPage .ModalBody {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+.SkillsPage .ModalBody ul {
+	padding-left: 2em;
+}
+
 .tablet .SkillsPage .skillsTable,
 .mobile .SkillsPage .skillsTable {
 	grid-template-columns: auto auto;
@@ -39,4 +54,10 @@
 }
 .mobile .skillsTable div p {
 	font-size: 1em;
+}
+@media (max-width: 920px) {
+	.SkillsPage .Modal {
+		margin: 3em;
+		font-size: 1em;
+	}
 }

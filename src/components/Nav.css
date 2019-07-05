@@ -26,7 +26,7 @@ nav > button {
 	padding: 1em;
 	box-sizing: border-box;
 	border-radius: 5px;
-	background-color: #fff;
+	background-color: #fafafa;
 }
 .mobile .NavBox {
 	left: 2em;
@@ -56,15 +56,21 @@ nav > button {
 }
 
 /* Nav transition */
-.navTrans-enter,
-.navTrans-appear {
+.navTrans-enter {
 	opacity: 0;
 	transform: translate(20em, -20em) scale(0);
 }
-.navTrans-enter-active,
-.navTrans-appear-active {
+.navTrans-enter-active {
 	opacity: 1;
 	transform: translate(0em, 0em) scale(1);
 	transition: opacity 500ms, transform 200ms, scale 500ms;
 	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+.navTrans-exit {
+	opacity: 1;
+	transform: translate(0em, 0em) scale(1);
+}
+.navTrans-exit-active {
+	opacity: 0;
+	transition: opacity 200ms;
 }

@@ -27,49 +27,47 @@ class Nav extends Component {
 	render() {
 		return (
 			<nav className={`Nav${this.props.nav.isOpen ? 'Open' : ''}`}>
-				{this.props.nav.isOpen && (
-					<CSSTransition in={this.props.nav.isOpen} classNames="navTrans" timeout={500} appear>
-						<div className="NavBox" ref={node => (this.refNode = node)}>
-							<button onClick={this.props.toggleNav}>
-								<img className="navIcon" src={close} />
-							</button>
-							<ul>
-								<li>
-									<NavLink
-										to="/about"
-										onClick={this.props.closeNav}
-										activeStyle={{ color: '#005cb9' }}>
-										About
-									</NavLink>
-								</li>
-								<li>
-									<NavLink
-										to="/projects"
-										onClick={this.props.closeNav}
-										activeStyle={{ color: '#005cb9' }}>
-										Projects
-									</NavLink>
-								</li>
-								<li>
-									<NavLink
-										to="/skills"
-										onClick={this.props.closeNav}
-										activeStyle={{ color: '#005cb9' }}>
-										Skills
-									</NavLink>
-								</li>
-								<li>
-									<NavLink
-										to="/contact"
-										onClick={this.props.closeNav}
-										activeStyle={{ color: '#005cb9' }}>
-										Contact
-									</NavLink>
-								</li>
-							</ul>
-						</div>
-					</CSSTransition>
-				)}
+				<CSSTransition in={this.props.nav.isOpen} classNames="navTrans" timeout={500} unmountOnExit>
+					<div className="NavBox" ref={node => (this.refNode = node)}>
+						<button onClick={this.props.toggleNav}>
+							<img className="navIcon" src={close} />
+						</button>
+						<ul>
+							<li>
+								<NavLink
+									to="/about"
+									onClick={this.props.closeNav}
+									activeStyle={{ color: '#005cb9' }}>
+									About
+								</NavLink>
+							</li>
+							<li>
+								<NavLink
+									to="/projects"
+									onClick={this.props.closeNav}
+									activeStyle={{ color: '#005cb9' }}>
+									Projects
+								</NavLink>
+							</li>
+							<li>
+								<NavLink
+									to="/skills"
+									onClick={this.props.closeNav}
+									activeStyle={{ color: '#005cb9' }}>
+									Skills
+								</NavLink>
+							</li>
+							<li>
+								<NavLink
+									to="/contact"
+									onClick={this.props.closeNav}
+									activeStyle={{ color: '#005cb9' }}>
+									Contact
+								</NavLink>
+							</li>
+						</ul>
+					</div>
+				</CSSTransition>
 				<button onClick={this.props.toggleNav}>
 					<img className="navIcon" src={menu} />
 				</button>

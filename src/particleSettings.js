@@ -3,6 +3,12 @@
  */
 export default {
 	particles: {
+		color: {
+			value: '#005cb9'
+		},
+		line_linked: {
+			color: '#005cb9'
+		},
 		number: {
 			value: 10,
 			density: {
@@ -14,7 +20,7 @@ export default {
 			random: true
 		},
 		opacity: {
-			value: 0.4,
+			value: 0.7,
 			anim: {
 				enable: false
 			},

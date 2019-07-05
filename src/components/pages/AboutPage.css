@@ -10,10 +10,10 @@
 .AboutPage .content a {
 	background-color: transparent;
 	color: #fff;
-	padding: 5px 10px 5px 10px;
+	padding: 5px 15px 5px 15px;
 	min-width: 25%;
 	margin-right: 5%;
-	font-size: 1em;
+	font-size: 0.9em;
 	font-weight: lighter;
 	border: 1px solid #fff;
 	border-radius: 50px;

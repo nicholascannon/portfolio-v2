@@ -29,5 +29,5 @@ const mapStateToProps = state => ({
 
 export default connect(
 	mapStateToProps,
-	{ closeNav }
+	{}
 )(Page);
