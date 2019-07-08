@@ -53,3 +53,21 @@
 .mobile .ContactPage .contactBox {
 	min-height: 100%;
 }
+
+/* Transition */
+.contactFade-enter,
+.contactFade-appear {
+	opacity: 0;
+}
+.contactFade-enter-active,
+.contactFade-appear-active {
+	opacity: 1;
+	transition: opacity 200ms;
+}
+.contactFade-exit {
+	opacity: 1;
+}
+.contactFade-exit-active {
+	opacity: 0;
+	transition: opacity 200ms;
+}
