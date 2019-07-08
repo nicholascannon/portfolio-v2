@@ -1,0 +1,55 @@
+.ContactPage {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.ContactPage .contactBox {
+	background-color: #fafafa;
+	border-radius: 10px;
+	color: #000000;
+}
+.ContactPage form {
+	min-height: 100%;
+	width: 100%;
+	padding: 1em;
+	box-sizing: border-box;
+	font-size: 1em;
+}
+.ContactPage input,
+.ContactPage textarea,
+.ContactPage button {
+	width: 100%;
+	resize: none;
+	padding: 10px;
+	font-size: 1em;
+	border: 1px solid #c4c4c4;
+	border-radius: 10px;
+	outline: none;
+	margin: 0.5em 0 0.5em 0;
+}
+.ContactPage form span {
+	display: block;
+}
+
+.ContactPage h1 {
+	margin-bottom: 0.5em;
+}
+
+.ContactPage input:focus,
+.ContactPage button:focus,
+.ContactPage textarea:focus {
+	border: 1px solid #005cb9;
+}
+
+.ContactPage button[type='submit'] {
+	background-color: transparent;
+}
+.ContactPage button[type='submit']:hover {
+	background-color: #005cb9;
+	color: #fafafa;
+	cursor: pointer;
+}
+
+.mobile .ContactPage .contactBox {
+	min-height: 100%;
+}
