@@ -7,6 +7,8 @@ import { NavLink } from 'react-router-dom';
 import { toggleNav, closeNav } from '../actions/navActions';
 import { CSSTransition } from 'react-transition-group';
 
+import { logout } from '../actions/authActions';
+
 import './Nav.css';
 import menu from '../icons/icons8-menu-filled.svg';
 import close from '../icons/iconfinder_icon-close-round_211651.svg';
@@ -65,6 +67,18 @@ class Nav extends Component {
 									Contact
 								</NavLink>
 							</li>
+							{this.props.isAuthenticated ? (
+								<li>
+									<NavLink
+										to="/"
+										onClick={() => {
+											this.props.closeNav();
+											this.props.logout();
+										}}>
+										Logout
+									</NavLink>
+								</li>
+							) : null}
 						</ul>
 					</div>
 				</CSSTransition>
@@ -77,10 +91,11 @@ class Nav extends Component {
 }
 
 const mapStateToProps = state => ({
-	nav: state.nav
+	nav: state.nav,
+	isAuthenticated: state.auth.isAuthenticated
 });
 
 export default connect(
 	mapStateToProps,
-	{ toggleNav, closeNav }
+	{ toggleNav, closeNav, logout }
 )(Nav);

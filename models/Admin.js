@@ -19,7 +19,7 @@ const adminSchema = mongoose.Schema({
 });
 
 adminSchema.methods.genToken = function() {
-	jwt.sign({ email: this.email }, process.env.SECRET, { expiresIn: '1d' });
+	return jwt.sign({ email: this.email }, process.env.SECRET, { expiresIn: '1d' });
 };
 
 module.exports = mongoose.model('Admin', adminSchema);

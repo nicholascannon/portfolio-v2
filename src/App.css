@@ -45,6 +45,37 @@ header {
 	}
 }
 
+/* App wide form styles */
+form input,
+form textarea,
+form button {
+	width: 100%;
+	resize: none;
+	padding: 10px;
+	font-size: 1em;
+	border: 1px solid #c4c4c4;
+	border-radius: 10px;
+	outline: none;
+	margin: 0.5em 0 0.5em 0;
+}
+form input:focus,
+form button:focus,
+form textarea:focus {
+	border: 1px solid #005cb9;
+}
+
+form button[type='submit'] {
+	background-color: transparent;
+}
+form button[type='submit']:hover {
+	background-color: #005cb9;
+	color: #fafafa;
+	cursor: pointer;
+}
+form .formError {
+	color: #ff0000;
+}
+
 /* Page Animations */
 .page-enter,
 .page-appear {

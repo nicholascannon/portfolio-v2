@@ -17,7 +17,9 @@ export const load_user = () => (dispatch, getState) => {
 	const token = getState().auth.token;
 	if (token) {
 		axios
-			.get('/api/auth/verify')
+			.get('/api/auth/verify', {
+				headers: { Authorization: token, 'Content-Type': 'application/json' }
+			})
 			.then(res => dispatch({ type: LOAD_USER, payload: res.data }))
 			.catch(err => {
 				dispatch({ type: LOAD_FAIL });
@@ -48,4 +50,8 @@ export const login = (email, password) => dispatch => {
 				payload: { msg: err.response.data.msg, code: err.response.status, id: LOGIN_FAIL }
 			});
 		});
+};
+
+export const logout = () => {
+	return { type: LOGOUT };
 };

@@ -1,0 +1,14 @@
+.AdminPage {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.AdminPage .loginBox {
+	background-color: #fafafa;
+	color: #000;
+	padding: 1em;
+	border-radius: 10px;
+}
+.AdminPage .loginBox h1 {
+	padding-bottom: 0.5em;
+}
