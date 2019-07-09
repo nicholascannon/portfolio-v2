@@ -35,9 +35,14 @@ header {
 	color: #fff;
 	padding-left: 1em;
 }
-
 .social-links span:hover {
 	color: #005cb9;
+}
+
+@media (max-width: 320px) {
+	#brand {
+		font-size: 1.4em;
+	}
 }
 
 /* Page Animations */

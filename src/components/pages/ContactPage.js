@@ -40,7 +40,7 @@ class ContactPage extends React.Component {
 					</CSSTransition>
 				) : (
 					<div className="contactBox">
-						<form method="POST">
+						<form method="POST" onSubmit={this.onSubmit}>
 							<h1>Contact Me</h1>
 							<label for="name">Name</label>
 							<input
@@ -50,6 +50,7 @@ class ContactPage extends React.Component {
 								value={this.state.name}
 								onChange={this.onChange}
 								placeholder="Name"
+								required
 							/>
 							<label for="name">Email</label>
 							<input
@@ -59,6 +60,7 @@ class ContactPage extends React.Component {
 								value={this.state.email}
 								onChange={this.onChange}
 								placeholder="Email"
+								required
 							/>
 							<label for="msg">Message</label>
 							<textarea
@@ -67,10 +69,9 @@ class ContactPage extends React.Component {
 								rows="10"
 								value={this.state.msg}
 								onChange={this.onChange}
-								placeholder="Your message..."></textarea>
-							<button type="submit" onClick={this.onSubmit}>
-								SEND
-							</button>
+								placeholder="Your message..."
+								required></textarea>
+							<button type="submit">SEND</button>
 						</form>
 					</div>
 				)}
