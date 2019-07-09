@@ -14,6 +14,7 @@ import {
 	ContactPage,
 	SkillsPage,
 	ProjectsPage,
+	AdminPage,
 	NotFoundPage
 } from './components/pages';
 import Nav from './components/Nav';
@@ -25,7 +26,8 @@ const routes = [
 	{ path: '/about', Component: AboutPage },
 	{ path: '/contact', Component: ContactPage },
 	{ path: '/skills', Component: SkillsPage },
-	{ path: '/projects', Component: ProjectsPage }
+	{ path: '/projects', Component: ProjectsPage },
+	{ path: '/admin', Component: AdminPage }
 ];
 
 class App extends React.Component {
