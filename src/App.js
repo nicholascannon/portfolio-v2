@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import { Route, Switch, withRouter, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { CSSTransition } from 'react-transition-group';
@@ -31,6 +32,14 @@ class App extends React.Component {
 		super(props);
 	}
 
+	componentDidMount() {
+		// axios
+		// 	.get('/api/auth/verify')
+		// 	.then(res => {
+		// 		console.log(res);
+		// 	})
+		// 	.catch(err => console.log(err));
+	}
 	componentWillMount() {
 		window.addEventListener('resize', this.windowResize);
 		this.windowResize();

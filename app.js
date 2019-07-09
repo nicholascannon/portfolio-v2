@@ -5,13 +5,13 @@
  */
 const express = require('express');
 const logger = require('morgan');
-const mongoose = require('mongoose');
 const chalk = require('chalk');
 const compression = require('compression');
 const helmet = require('helmet');
 const dotenv = require('dotenv');
 const errorhandler = require('errorhandler');
 const path = require('path');
+const setupDB = require('./config/db');
 
 /**
  * Load environment variables
@@ -26,21 +26,9 @@ const app = express();
 app.set('port', process.env.SERVER_PORT || 8000);
 
 /**
- * Connect to Database
+ * Set up database
  */
-if (!process.env.MONGO_URI) {
-	console.error(`${chalk.red('✗ Error:')} no MongoDB URI`);
-	process.exit(0);
-}
-mongoose.set('useNewUrlParser', true);
-mongoose.set('useCreateIndex', true);
-const printMongoDBError = err => {
-	console.error(`${chalk.red('✗ Error:')} connecting to MongoDB: ${err.message}`);
-	process.exit(0);
-};
-mongoose.connect(process.env.MONGO_URI).catch(err => printMongoDBError(err));
-mongoose.connection.on('err', err => printMongoDBError(err));
-mongoose.connection.on('open', () => console.log(`${chalk.green('✓')} Connected to MongoDB`));
+setupDB();
 
 /**
  * Middleware
@@ -53,12 +41,9 @@ app.use(express.json());
 /**
  * API Routes
  */
-app.get('/api/', (req, res, next) => {
-	return res.json({ msg: 'working' });
-});
-app.use('/api/', (req, res, next) => {
-	return res.status(404).json({ msg: `invalid route ${req.originalUrl}` });
-});
+app.use('/api/skills/', require('./routes/skills'));
+app.use('/api/projects/', require('./routes/projects'));
+app.use('/api/auth/', require('./routes/auth'));
 
 /**
  * Serve frontend in production
