@@ -1,11 +1,12 @@
 import React from 'react';
-import axios from 'axios';
 import { Route, Switch, withRouter, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { CSSTransition } from 'react-transition-group';
 import Particels from 'react-particles-js';
 import particleSettings from './particleSettings';
 import FontAwesome from 'react-fontawesome';
+
+import { load_user } from './actions/authActions';
 
 import {
 	HomePage,
@@ -33,12 +34,7 @@ class App extends React.Component {
 	}
 
 	componentDidMount() {
-		// axios
-		// 	.get('/api/auth/verify')
-		// 	.then(res => {
-		// 		console.log(res);
-		// 	})
-		// 	.catch(err => console.log(err));
+		this.props.load_user();
 	}
 	componentWillMount() {
 		window.addEventListener('resize', this.windowResize);
@@ -107,6 +103,6 @@ const mapStateToProps = state => ({});
 export default withRouter(
 	connect(
 		mapStateToProps,
-		{}
+		{ load_user }
 	)(App)
 );

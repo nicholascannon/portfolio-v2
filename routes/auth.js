@@ -37,3 +37,5 @@ router.get('/verify', authenticate, (req, res, next) => {
 		return res.json({ email: admin.email });
 	});
 });
+
+module.exports = router;
