@@ -5,6 +5,7 @@ import { login } from '../../actions/authActions';
 import { LOGIN_FAIL } from '../../actions/types';
 
 import Page from './Page';
+import TabbedPane from '../TabbedPane';
 
 import './AdminPage.css';
 
@@ -44,10 +45,17 @@ class AdminPage extends Component {
 
 	render() {
 		return (
-			<Page pageName="AdminPage">
+			<Page pageName={`AdminPage${this.props.isAuthenticated ? '' : 'Login'}`}>
 				{this.props.isAuthenticated ? (
-					<div>
-						<h1>Welcome Admin!</h1>
+					<div className="adminBox">
+						<TabbedPane links={[{ id: 1, name: 'ABOUT' }, { id: 2, name: 'CONTACT' }]}>
+							<React.Fragment>
+								<h1>ABOUT</h1>
+							</React.Fragment>
+							<React.Fragment>
+								<h1>CONTACT</h1>
+							</React.Fragment>
+						</TabbedPane>
 					</div>
 				) : (
 					<div className="loginBox">
@@ -74,8 +82,8 @@ class AdminPage extends Component {
 								value={this.state.password}
 							/>
 							<button type="submit">LOGIN</button>
-							{this.state.err ? <span className="formError">{this.state.err}</span> : null}
 						</form>
+						{this.state.err ? <span className="formError">{this.state.err}</span> : null}
 					</div>
 				)}
 			</Page>

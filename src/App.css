@@ -72,7 +72,7 @@ form button[type='submit']:hover {
 	color: #fafafa;
 	cursor: pointer;
 }
-form .formError {
+.formError {
 	color: #ff0000;
 }
 
