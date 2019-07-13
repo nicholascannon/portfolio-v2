@@ -17,3 +17,8 @@ export const LOADING = 'LOADING';
 /* Nav Actions */
 export const NAV_TOGGLE = 'NAV_TOGGLE';
 export const NAV_CLOSE = 'NAV_CLOSE';
+
+/* Contact Actions */
+export const CONTACT_SENT = 'CONTACT_SENT';
+export const CONTACT_SENDING = 'CONTACT_SENDING';
+export const CONTACT_ERROR = 'CONTACT_ERROR';

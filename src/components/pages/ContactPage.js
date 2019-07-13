@@ -3,7 +3,11 @@
  */
 import React from 'react';
 import Page from './Page';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { CSSTransition } from 'react-transition-group';
+import { connect } from 'react-redux';
+
+import { sendContact } from '../../actions/contactActions';
+import { CONTACT_SENT } from '../../actions/types';
 
 import './ContactPage.css';
 
@@ -14,29 +18,43 @@ class ContactPage extends React.Component {
 			name: '',
 			msg: '',
 			email: '',
-			sent: false
+			err: ''
 		};
 		this.onChange = e => {
 			this.setState({ [e.target.name]: e.target.value });
 		};
 	}
 
+	componentDidUpdate(prevProps) {
+		if (prevProps.err !== this.props.err) {
+			if (this.props.err.id === CONTACT_SENT) {
+				this.setState({ err: this.props.err.msg });
+			} else {
+				this.setState({ err: '' });
+			}
+		}
+	}
+
 	onSubmit = e => {
 		e.preventDefault();
+		const { name, email, msg } = this.state;
+
+		this.props.sendContact(name, email, msg);
+
 		this.setState({
 			email: '',
 			name: '',
 			msg: '',
-			sent: true
+			err: ''
 		});
 	};
 
 	render() {
 		return (
 			<Page pageName="ContactPage">
-				{this.state.sent ? (
-					<CSSTransition in={this.state.sent} timeout={200} classNames="contactFade" appear>
-						<h1>Your message has sent!</h1>
+				{this.props.sent || this.props.sending ? (
+					<CSSTransition in={this.props.sent} timeout={200} classNames="contactFade" appear>
+						{this.props.sent ? <h1>Your message has sent!</h1> : <h1>Sending</h1>}
 					</CSSTransition>
 				) : (
 					<div className="contactBox">
@@ -72,6 +90,7 @@ class ContactPage extends React.Component {
 								placeholder="Your message..."
 								required></textarea>
 							<button type="submit">SEND</button>
+							{this.state.err ? <span className="formError">{this.state.err}</span> : null}
 						</form>
 					</div>
 				)}
@@ -80,4 +99,13 @@ class ContactPage extends React.Component {
 	}
 }
 
-export default ContactPage;
+const mapStateToProps = state => ({
+	sent: state.contact.sent,
+	sending: state.contact.sending,
+	err: state.error
+});
+
+export default connect(
+	mapStateToProps,
+	{ sendContact }
+)(ContactPage);
