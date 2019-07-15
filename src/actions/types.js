@@ -22,3 +22,7 @@ export const NAV_CLOSE = 'NAV_CLOSE';
 export const CONTACT_SENT = 'CONTACT_SENT';
 export const CONTACT_SENDING = 'CONTACT_SENDING';
 export const CONTACT_ERROR = 'CONTACT_ERROR';
+
+/* About Actions */
+export const GET_ABOUT = 'GET_ABOUT';
+export const SAVE_ABOUT = 'SAVE_ABOUT';

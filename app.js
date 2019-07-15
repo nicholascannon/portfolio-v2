@@ -45,6 +45,7 @@ app.use('/api/skills/', require('./routes/skills'));
 app.use('/api/projects/', require('./routes/projects'));
 app.use('/api/auth/', require('./routes/auth'));
 app.use('/api/contact/', require('./routes/contact'));
+app.use('/api/about/', require('./routes/about'));
 
 /**
  * Serve frontend in production

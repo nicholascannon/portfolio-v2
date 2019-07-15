@@ -7,6 +7,7 @@ import particleSettings from './particleSettings';
 import FontAwesome from 'react-fontawesome';
 
 import { load_user } from './actions/authActions';
+import { getAbout } from './actions/adminActions';
 
 import {
 	HomePage,
@@ -22,12 +23,12 @@ import Nav from './components/Nav';
 import './App.css';
 
 const routes = [
-	{ path: '/', Component: HomePage },
-	{ path: '/about', Component: AboutPage },
-	{ path: '/contact', Component: ContactPage },
-	{ path: '/skills', Component: SkillsPage },
-	{ path: '/projects', Component: ProjectsPage },
-	{ path: '/admin', Component: AdminPage }
+	{ path: '/', Component: <HomePage /> },
+	{ path: '/about', Component: <AboutPage /> },
+	{ path: '/contact', Component: <ContactPage /> },
+	{ path: '/skills', Component: <SkillsPage /> },
+	{ path: '/projects', Component: <ProjectsPage /> },
+	{ path: '/admin', Component: <AdminPage /> }
 ];
 
 class App extends React.Component {
@@ -36,6 +37,7 @@ class App extends React.Component {
 	}
 
 	componentDidMount() {
+		this.props.getAbout();
 		this.props.load_user();
 	}
 	componentWillMount() {
@@ -80,7 +82,7 @@ class App extends React.Component {
 									classNames="page"
 									unmountOnExit
 									appear>
-									<Component />
+									{Component}
 								</CSSTransition>
 							)}
 						</Route>
@@ -105,6 +107,6 @@ const mapStateToProps = state => ({});
 export default withRouter(
 	connect(
 		mapStateToProps,
-		{ load_user }
+		{ load_user, getAbout }
 	)(App)
 );

@@ -6,6 +6,7 @@ import { LOGIN_FAIL } from '../../actions/types';
 
 import Page from './Page';
 import TabbedPane from '../TabbedPane';
+import AdminAboutSection from './AdminAboutSection';
 
 import './AdminPage.css';
 
@@ -48,12 +49,18 @@ class AdminPage extends Component {
 			<Page pageName={`AdminPage${this.props.isAuthenticated ? '' : 'Login'}`}>
 				{this.props.isAuthenticated ? (
 					<div className="adminBox">
-						<TabbedPane links={[{ id: 1, name: 'ABOUT' }, { id: 2, name: 'CONTACT' }]}>
+						<TabbedPane
+							links={[
+								{ id: 1, name: 'ABOUT' },
+								{ id: 2, name: 'PROJECTS' },
+								{ id: 3, name: 'SKILLS' }
+							]}>
+							<AdminAboutSection />
 							<React.Fragment>
-								<h1>ABOUT</h1>
+								<h1>PROJECTS</h1>
 							</React.Fragment>
 							<React.Fragment>
-								<h1>CONTACT</h1>
+								<h1>SKILLS</h1>
 							</React.Fragment>
 						</TabbedPane>
 					</div>

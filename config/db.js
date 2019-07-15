@@ -3,8 +3,10 @@
  */
 const mongoose = require('mongoose');
 const chalk = require('chalk');
-const Admin = require('../models/Admin');
 const bcrypt = require('bcrypt');
+
+const Admin = require('../models/Admin');
+const About = require('../models/About');
 
 module.exports = async () => {
 	/**
@@ -48,6 +50,27 @@ module.exports = async () => {
 		}
 	} catch (err) {
 		console.error(`${chalk.red('✗ Error:')} Fetching admins: ${err.message}`);
+		process.exit(0);
+	}
+
+	/**
+	 * Sections setup
+	 */
+	try {
+		// ABOUT
+		const about = await About.find();
+		if (about.length > 1) {
+			// More than one about, error out
+			throw new Error('More than one about object exists!');
+		} else if (about.length === 0) {
+			// create new empty about object
+			await About.create({});
+			console.log(`${chalk.yellow('!')} Created new about object, ADD CONTENT!`);
+		} else {
+			console.log(`${chalk.green('✓')} Only 1 about object found!`);
+		}
+	} catch (e) {
+		console.error(`${chalk.red('✗ Error:')} Setting up sections: ${err.message}`);
 		process.exit(0);
 	}
 };
