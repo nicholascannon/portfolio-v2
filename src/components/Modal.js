@@ -39,7 +39,7 @@ class Modal extends Component {
 						<div className="ModalHeader">
 							<h2>{this.props.header}</h2>
 							<button className="closeBtn" onClick={this.closeModal}>
-								<img src={close} />
+								<img src={close} alt="close" />
 							</button>
 						</div>
 						<hr />
@@ -47,12 +47,12 @@ class Modal extends Component {
 					</div>
 				</CSSTransition>
 				<div className="ModalBtnContainer">
-					<a
+					<button
 						className="ModalBtn"
 						onClick={this.openModal}
 						style={this.state.open ? { opacity: 0, pointerEvents: 'none', cursor: 'default' } : {}}>
 						{this.props.btnText}
-					</a>
+					</button>
 				</div>
 			</React.Fragment>
 		);

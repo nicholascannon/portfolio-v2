@@ -12,14 +12,14 @@ import './SkillsPage.css';
 const SkillsPage = props => {
 	return (
 		<Page pageName="SkillsPage">
-			<table className="skillsTable">
+			<div className="skillsTable">
 				{skills.map(skill => (
 					<div key={skill.name}>
-						<img src={skill.src} />
+						<img src={skill.src} alt={skill.name} />
 						<p>{skill.name}</p>
 					</div>
 				))}
-			</table>
+			</div>
 			<div className="rect"></div>
 			<Modal header="More skills" btnText="More skills">
 				<div>

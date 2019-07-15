@@ -32,7 +32,7 @@ class Nav extends Component {
 				<CSSTransition in={this.props.nav.isOpen} classNames="navTrans" timeout={500} unmountOnExit>
 					<div className="NavBox" ref={node => (this.refNode = node)}>
 						<button onClick={this.props.toggleNav}>
-							<img className="navIcon" src={close} />
+							<img className="navIcon" src={close} alt="close" />
 						</button>
 						<ul>
 							<li>
@@ -83,7 +83,7 @@ class Nav extends Component {
 					</div>
 				</CSSTransition>
 				<button onClick={this.props.toggleNav}>
-					<img className="navIcon" src={menu} />
+					<img className="navIcon" src={menu} alt="menu" />
 				</button>
 			</nav>
 		);

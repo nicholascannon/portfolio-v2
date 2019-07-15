@@ -16,7 +16,7 @@ class AboutPage extends React.Component {
 			<Page pageName="AboutPage">
 				<div>
 					<div className="profileImg">
-						<img src={profileImg} />
+						<img src={profileImg} alt="profile" />
 					</div>
 					<div className="content">
 						<h1>{this.props.heading}</h1>
@@ -24,10 +24,10 @@ class AboutPage extends React.Component {
 						<p>{this.props.body}</p>
 						<br />
 						<div className="aboutButtons">
-							<a href={resume} target="_blank">
+							<a href={resume} target="_blank" rel="noopener noreferrer">
 								Resume
 							</a>
-							<a href="mailto:nicholascannon1@gmail.com" target="_blank">
+							<a href="mailto:nicholascannon1@gmail.com" target="_blank" rel="noopener noreferrer">
 								Email Me
 							</a>
 						</div>

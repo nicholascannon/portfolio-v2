@@ -32,10 +32,6 @@ const routes = [
 ];
 
 class App extends React.Component {
-	constructor(props) {
-		super(props);
-	}
-
 	componentDidMount() {
 		this.props.getAbout();
 		this.props.load_user();
@@ -90,10 +86,13 @@ class App extends React.Component {
 					<Route key="notfound" component={NotFoundPage} />
 				</Switch>
 				<div className="social-links">
-					<a href="https://www.linkedin.com/in/niccannon1" target="_blank">
+					<a
+						href="https://www.linkedin.com/in/niccannon1"
+						target="_blank"
+						rel="noopener noreferrer">
 						<FontAwesome name="linkedin" size="2x" />
 					</a>
-					<a href="https://github.com/nicholascannon1" target="_blank">
+					<a href="https://github.com/nicholascannon1" target="_blank" rel="noopener noreferrer">
 						<FontAwesome name="github" size="2x" />
 					</a>
 				</div>
