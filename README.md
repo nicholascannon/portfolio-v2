@@ -1,2 +1,2 @@
 # portfolio2.0
-Developer portfolio 2.0. Built with Node &amp; React
+Developer portfolio version 2. Built with Node, React &amp; Docker.
