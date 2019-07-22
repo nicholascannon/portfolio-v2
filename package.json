@@ -14,7 +14,7 @@
 	"scripts": {
 		"client-start": "react-scripts start",
 		"client-build": "react-scripts build",
-		"server-start": "nodemon app.js",
+		"server-start": "export NODE_ENV=development && nodemon app.js",
 		"pretty": "pretty-quick --staged",
 		"dev": "concurrently \"npm run server-start\" \"npm run client-start\" ",
 		"start": "node app.js"

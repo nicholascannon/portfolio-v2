@@ -10,14 +10,15 @@ const compression = require('compression');
 const helmet = require('helmet');
 const dotenv = require('dotenv');
 const errorhandler = require('errorhandler');
-const path = require('path');
 const setupDB = require('./config/db');
 
 /**
- * Load environment variables
+ * Load environment variables from dev or prod .env file
  */
-dotenv.config({ path: '.env' });
-console.log(`${chalk.green('✓')} loaded .env file`);
+dotenv.config({ path: process.env.NODE_ENV === 'development' ? '.dev.env' : '.env' });
+console.log(
+	`${chalk.green('✓')} loaded ${process.env.NODE_ENV === 'development' ? 'dev' : 'prod'} .env file`
+);
 
 /**
  * Create Application
@@ -46,17 +47,6 @@ app.use('/api/projects/', require('./routes/projects'));
 app.use('/api/auth/', require('./routes/auth'));
 app.use('/api/contact/', require('./routes/contact'));
 app.use('/api/about/', require('./routes/about'));
-
-/**
- * Serve frontend in production
- */
-if (process.env.NODE_ENV === 'production') {
-	console.log(`${chalk.yellow('!')} Serving frontend from build folder`);
-	app.use(express.static(path.resolve(__dirname, 'build')));
-	app.get('*', (req, res) => {
-		return res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
-	});
-}
 
 /**
  * Error handler

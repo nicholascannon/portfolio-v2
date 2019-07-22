@@ -14,13 +14,13 @@ module.exports = async () => {
 	 */
 	if (!process.env.MONGO_URI) {
 		console.error(`${chalk.red('✗ Error:')} no MongoDB URI`);
-		process.exit(0);
+		process.exit(1);
 	}
 	mongoose.set('useNewUrlParser', true);
 	mongoose.set('useCreateIndex', true);
 	const printMongoDBError = err => {
 		console.error(`${chalk.red('✗ Error:')} connecting to MongoDB: ${err.message}`);
-		process.exit(0);
+		process.exit(1);
 	};
 	mongoose.connect(process.env.MONGO_URI).catch(err => printMongoDBError(err));
 	mongoose.connection.on('err', err => printMongoDBError(err));
@@ -35,7 +35,7 @@ module.exports = async () => {
 			// no admin account exists, create one
 			if (!process.env.ADMIN_EMAIL || !process.env.ADMIN_PWD) {
 				console.error(`${chalk.red('✗ Error:')} Please provide admin account email and password!`);
-				process.exit(0);
+				process.exit(1);
 			}
 
 			const salt = await bcrypt.genSalt(10);
@@ -44,13 +44,13 @@ module.exports = async () => {
 			console.log(`${chalk.green('✓')} Created admin account!`);
 		} else if (accounts.length > 1) {
 			console.error(`${chalk.red('✗ Error:')} More than 1 admin account!`);
-			process.exit(0);
+			process.exit(1);
 		} else {
 			console.log(`${chalk.yellow('!')} Using admin account with email: ${accounts[0].email}`);
 		}
 	} catch (err) {
 		console.error(`${chalk.red('✗ Error:')} Fetching admins: ${err.message}`);
-		process.exit(0);
+		process.exit(1);
 	}
 
 	/**
@@ -71,6 +71,6 @@ module.exports = async () => {
 		}
 	} catch (e) {
 		console.error(`${chalk.red('✗ Error:')} Setting up sections: ${err.message}`);
-		process.exit(0);
+		process.exit(1);
 	}
 };
