@@ -7,7 +7,8 @@ const initState = {
 	about: {
 		heading: '',
 		subHeading: '',
-		body: ''
+		body: '',
+		msg: ''
 	}
 };
 

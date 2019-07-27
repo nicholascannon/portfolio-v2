@@ -7,6 +7,7 @@ import { LOGIN_FAIL } from '../../actions/types';
 import Page from './Page';
 import TabbedPane from '../TabbedPane';
 import AdminAboutSection from './adminSections/AdminAboutSection';
+import AdminProjectsSection from './adminSections/AdminProjectsSection';
 
 import './AdminPage.css';
 
@@ -56,9 +57,7 @@ class AdminPage extends Component {
 								{ id: 3, name: 'SKILLS' }
 							]}>
 							<AdminAboutSection />
-							<React.Fragment>
-								<h1>PROJECTS</h1>
-							</React.Fragment>
+							<AdminProjectsSection />
 							<React.Fragment>
 								<h1>SKILLS</h1>
 							</React.Fragment>
