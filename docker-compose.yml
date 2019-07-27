@@ -15,7 +15,7 @@ services:
     restart: always
     volumes:
       - type: bind
-        source: /Users/Nicholas/docker/volumes/mongodb
+        source: ./volumes/mongodb
         target: /data/db
 
   nginx:

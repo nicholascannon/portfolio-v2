@@ -63,9 +63,14 @@ module.exports = async () => {
 			// More than one about, error out
 			throw new Error('More than one about object exists!');
 		} else if (about.length === 0) {
-			// create new empty about object
-			await About.create({});
-			console.log(`${chalk.yellow('!')} Created new about object, ADD CONTENT!`);
+			// create new default about object
+			await About.create({
+				heading: "Hi I'm Nicholas Cannon",
+				subHeading: 'I like technology (and music)',
+				body:
+					"I'm currently living in Perth, WA and am in my last year of study at the University of Western Australia majoring in Computer and Data Science. I've been writing software and experimenting with different technologies since high school and have always been eager to improve my skills and solve problems with technology. I also enjoy sports, DJ'ing and making/listening to music."
+			});
+			console.log(`${chalk.yellow('!')} Created new default about object`);
 		} else {
 			console.log(`${chalk.green('✓')} Only 1 about object found!`);
 		}
