@@ -6,7 +6,7 @@ import { LOGIN_FAIL } from '../../actions/types';
 
 import Page from './Page';
 import TabbedPane from '../TabbedPane';
-import AdminAboutSection from './AdminAboutSection';
+import AdminAboutSection from './adminSections/AdminAboutSection';
 
 import './AdminPage.css';
 

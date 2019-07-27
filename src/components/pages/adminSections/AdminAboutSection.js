@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { saveAbout } from '../../actions/adminActions';
-import { SAVE_ABOUT } from '../../actions/types';
+import { saveAbout } from '../../../actions/adminActions';
+import { SAVE_ABOUT } from '../../../actions/types';
 
 class AdminAboutSection extends Component {
 	constructor(props) {
@@ -12,7 +12,8 @@ class AdminAboutSection extends Component {
 			aboutHeading: '',
 			aboutSubHeading: '',
 			aboutBody: '',
-			err: ''
+			err: '',
+			msg: ''
 		};
 	}
 
@@ -32,11 +33,13 @@ class AdminAboutSection extends Component {
 				this.setState({ err: '' });
 			}
 		}
+		// Update the content in the form
 		if (prevProps.about !== this.props.about) {
 			this.setState({
 				aboutHeading: this.props.about.heading,
 				aboutSubHeading: this.props.about.subHeading,
-				aboutBody: this.props.about.body
+				aboutBody: this.props.about.body,
+				msg: this.props.about.msg
 			});
 		}
 	}
@@ -48,6 +51,7 @@ class AdminAboutSection extends Component {
 	onSubmit = e => {
 		e.preventDefault();
 		this.props.saveAbout(this.state.aboutHeading, this.state.aboutSubHeading, this.state.aboutBody);
+		this.setState({ msg: '' });
 	};
 
 	render() {
@@ -78,9 +82,10 @@ class AdminAboutSection extends Component {
 						id="aboutBody"
 						cols="30"
 						rows="10"></textarea>
-					<button type="submit">Save</button>
+					<button type="submit">Update</button>
 				</form>
 				{this.state.err ? <span className="formError">{this.state.err}</span> : null}
+				{this.state.msg ? <span className="formSuccess">{this.state.msg}</span> : null}
 			</React.Fragment>
 		);
 	}

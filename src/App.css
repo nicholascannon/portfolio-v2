@@ -75,6 +75,9 @@ form button[type='submit']:hover {
 .formError {
 	color: #ff0000;
 }
+.formSuccess {
+	color: #41b115;
+}
 
 /* Page Animations */
 .page-enter,
