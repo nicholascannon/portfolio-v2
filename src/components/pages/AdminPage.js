@@ -50,17 +50,9 @@ class AdminPage extends Component {
 			<Page pageName={`AdminPage${this.props.isAuthenticated ? '' : 'Login'}`}>
 				{this.props.isAuthenticated ? (
 					<div className="adminBox">
-						<TabbedPane
-							links={[
-								{ id: 1, name: 'ABOUT' },
-								{ id: 2, name: 'PROJECTS' },
-								{ id: 3, name: 'SKILLS' }
-							]}>
+						<TabbedPane links={[{ id: 1, name: 'ABOUT' }, { id: 2, name: 'PROJECTS' }]}>
 							<AdminAboutSection />
 							<AdminProjectsSection />
-							<React.Fragment>
-								<h1>SKILLS</h1>
-							</React.Fragment>
 						</TabbedPane>
 					</div>
 				) : (

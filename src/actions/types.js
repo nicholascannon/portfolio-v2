@@ -26,3 +26,9 @@ export const CONTACT_ERROR = 'CONTACT_ERROR';
 /* About Actions */
 export const GET_ABOUT = 'GET_ABOUT';
 export const SAVE_ABOUT = 'SAVE_ABOUT';
+
+/* Projects Actions */
+export const GET_PROJECTS = 'GET_PROJECTS';
+export const SAVE_PROJECT = 'SAVE_PROJECT';
+export const EDIT_PROJECT = 'EDIT_PROJECT';
+export const DELETE_PROJECT = 'DELETE_PROJECT';

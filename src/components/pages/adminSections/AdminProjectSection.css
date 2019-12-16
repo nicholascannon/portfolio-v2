@@ -1,0 +1,19 @@
+.project-list ul {
+	list-style-type: none;
+}
+.project-list ul li {
+	display: flex;
+	justify-content: space-evenly;
+	padding: 1em;
+}
+.project-list ul li button {
+	padding: 1em;
+	border: 1px solid grey;
+	border-radius: 8px;
+	background-color: transparent;
+	cursor: pointer;
+}
+.project-list ul li button:hover {
+	background-color: #005cb9;
+	color: #ffffff;
+}

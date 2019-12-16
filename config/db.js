@@ -75,7 +75,7 @@ module.exports = async () => {
 			console.log(`${chalk.green('✓')} Only 1 about object found!`);
 		}
 	} catch (e) {
-		console.error(`${chalk.red('✗ Error:')} Setting up sections: ${err.message}`);
+		console.error(`${chalk.red('✗ Error:')} Setting up sections: ${e.message}`);
 		process.exit(1);
 	}
 };

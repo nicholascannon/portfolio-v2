@@ -8,6 +8,7 @@ import FontAwesome from 'react-fontawesome';
 
 import { load_user } from './actions/authActions';
 import { getAbout } from './actions/adminActions';
+import { getProjects } from './actions/projectActions';
 
 import {
 	HomePage,
@@ -33,8 +34,9 @@ const routes = [
 
 class App extends React.Component {
 	componentDidMount() {
-		this.props.getAbout();
 		this.props.load_user();
+		this.props.getAbout();
+		this.props.getProjects();
 	}
 	componentWillMount() {
 		window.addEventListener('resize', this.windowResize);
@@ -106,6 +108,6 @@ const mapStateToProps = state => ({});
 export default withRouter(
 	connect(
 		mapStateToProps,
-		{ load_user, getAbout }
+		{ load_user, getAbout, getProjects }
 	)(App)
 );
