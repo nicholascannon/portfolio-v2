@@ -68,16 +68,23 @@ class Nav extends Component {
 								</NavLink>
 							</li>
 							{this.props.isAuthenticated ? (
-								<li>
-									<NavLink
-										to="/"
-										onClick={() => {
-											this.props.closeNav();
-											this.props.logout();
-										}}>
-										Logout
-									</NavLink>
-								</li>
+								<React.Fragment>
+									<li>
+										<NavLink to="/admin" onClick={() => this.props.closeNav()}>
+											Admin
+										</NavLink>
+									</li>
+									<li>
+										<NavLink
+											to="/"
+											onClick={() => {
+												this.props.closeNav();
+												this.props.logout();
+											}}>
+											Logout
+										</NavLink>
+									</li>
+								</React.Fragment>
 							) : null}
 						</ul>
 					</div>
@@ -95,7 +102,4 @@ const mapStateToProps = state => ({
 	isAuthenticated: state.auth.isAuthenticated
 });
 
-export default connect(
-	mapStateToProps,
-	{ toggleNav, closeNav, logout }
-)(Nav);
+export default connect(mapStateToProps, { toggleNav, closeNav, logout })(Nav);

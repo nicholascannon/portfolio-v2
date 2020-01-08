@@ -5,6 +5,7 @@ import { saveProject, editProject, deleteProject } from '../../../actions/projec
 import Modal from '../../Modal';
 
 import './AdminProjectSection.css';
+import close from '../../../icons/iconfinder_icon-close-round_211651.svg';
 
 class AdminProjectsSection extends Component {
 	constructor(props) {
@@ -27,11 +28,12 @@ class AdminProjectsSection extends Component {
 	saveProject = e => {
 		e.preventDefault();
 
-		// prepare the project data
-		delete this.state.uuid; // can't send this when creating a project
-		this.state.tech = this.state.tech.split(',');
+		// copy state and prepare the project data
+		const state = { ...this.state };
+		delete state.uuid; // can't send this when creating a project
+		state.tech = this.state.tech.split(', ');
+		this.props.saveProject(state);
 
-		this.props.saveProject(this.state);
 		this.setState({
 			uuid: '',
 			name: '',
@@ -43,14 +45,29 @@ class AdminProjectsSection extends Component {
 
 	editProject = e => {
 		e.preventDefault();
-		this.state.tech = this.state.tech.split(',');
-		this.props.editProject(this.state);
+
+		// copy state
+		const state = { ...this.state };
+		state.tech = this.state.tech.split(', ');
+		this.props.editProject(state);
+
 		this.setState({
 			uuid: '',
 			name: '',
 			body: '',
 			tech: '',
 			url: ''
+		});
+	};
+
+	// sets the internal state values to the project being edited
+	onEditOpen = project => {
+		this.setState({
+			uuid: project._id,
+			name: project.name,
+			body: project.body,
+			tech: project.tech.join(', '),
+			url: project.url
 		});
 	};
 
@@ -65,19 +82,51 @@ class AdminProjectsSection extends Component {
 							{projects.map(project => (
 								<li key={project._id}>
 									<h3>{project.name}</h3>
-									{/* <Modal header={`Edit project ${project.name}`} btnText="Edit">
-										<form onSubmit={this.saveProject}>
+									<Modal
+										header={`Edit project ${project.name}`}
+										btnText="Edit"
+										onOpen={() => this.onEditOpen(project)}>
+										<form onSubmit={this.editProject}>
 											<label htmlFor="name">Name:</label>
-											<input type="text" name="name" id="name" onChange={this.onChange} />
+											<input
+												type="text"
+												name="name"
+												id="name"
+												onChange={this.onChange}
+												value={this.state.name}
+											/>
 											<label htmlFor="body">Body:</label>
-											<input type="text" name="body" id="body" onChange={this.onChange} />
+											<input
+												type="text"
+												name="body"
+												id="body"
+												onChange={this.onChange}
+												value={this.state.body}
+											/>
 											<label htmlFor="tech">Tech:</label>
-											<input type="text" name="tech" id="tech" onChange={this.onChange} />
+											<input
+												type="text"
+												name="tech"
+												id="tech"
+												onChange={this.onChange}
+												value={this.state.tech}
+											/>
 											<label htmlFor="url">URL:</label>
-											<input type="text" name="url" id="url" onChange={this.onChange} />
+											<input
+												type="text"
+												name="url"
+												id="url"
+												onChange={this.onChange}
+												value={this.state.url}
+											/>
+											<button type="submit">Save Project</button>
 										</form>
-									</Modal> */}
-									<button onClick={() => this.props.deleteProject(project._id)}>Delete</button>
+									</Modal>
+									<button
+										className="deleteBtn"
+										onClick={() => this.props.deleteProject(project._id)}>
+										<img className="navIcon" src={close} alt="close" />
+									</button>
 								</li>
 							))}
 						</ul>
@@ -107,7 +156,6 @@ const mapStateToProps = state => ({
 	projects: state.projects.projects
 });
 
-export default connect(
-	mapStateToProps,
-	{ saveProject, editProject, deleteProject }
-)(AdminProjectsSection);
+export default connect(mapStateToProps, { saveProject, editProject, deleteProject })(
+	AdminProjectsSection
+);

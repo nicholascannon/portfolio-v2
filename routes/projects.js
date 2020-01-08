@@ -22,22 +22,13 @@ router.get('/', (req, res, next) => {
  */
 router.post('/', (req, res, next) => {
 	const { name, body, tech, url } = req.body;
-	console.log(req.body);
 
 	if (!name || !body || !tech || tech.length === 0 || !url || !validate.isURL(url)) {
 		return res.status(400).json({ msg: 'Please provide valid information about the project' });
 	}
 
 	Project.create({ name, body, tech, url })
-		.then(project =>
-			res.json({
-				uuid: project.uuid,
-				name: project.name,
-				body: project.body,
-				tech: project.tech,
-				url: project.url
-			})
-		)
+		.then(project => res.json(project))
 		.catch(err => next(err));
 });
 
@@ -47,28 +38,20 @@ router.post('/', (req, res, next) => {
 router.put('/:uuid/', (req, res, next) => {
 	const { name, body, tech, url } = req.body;
 
-	if (!name || !body || !tech || tech.length === 0 || !url || validate.isURL(url)) {
-		return res.status(400).json({ msg: 'Please provide valid information about the project' });
-	}
+	// if (!name || !body || !tech || tech.length === 0 || validate.isURL(url)) {
+	// 	return res.status(400).json({ msg: 'Please provide valid information about the project' });
+	// }
 
 	Project.findByIdAndUpdate(req.params.uuid, { name, body, tech, url }, { new: true })
-		.then(project =>
-			res.json({
-				uuid: project.uuid,
-				name: project.name,
-				body: project.body,
-				tech: project.tech,
-				url: project.url
-			})
-		)
+		.then(project => res.json(project))
 		.catch(err => next(err));
 });
 
 /**
+ *
  * Delete project by uuid
  */
 router.delete('/:uuid/', (req, res, next) => {
-	console.log(req.params);
 	Project.findByIdAndDelete(req.params.uuid)
 		.then(project => res.json({ uuid: req.params.uuid }))
 		.catch(err => next(err));

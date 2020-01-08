@@ -18,6 +18,8 @@ module.exports = async () => {
 	}
 	mongoose.set('useNewUrlParser', true);
 	mongoose.set('useCreateIndex', true);
+	mongoose.set('useUnifiedTopology', true);
+	mongoose.set('useFindAndModify', true);
 	const printMongoDBError = err => {
 		console.error(`${chalk.red('✗ Error:')} connecting to MongoDB: ${err.message}`);
 		process.exit(1);

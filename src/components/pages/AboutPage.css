@@ -7,6 +7,9 @@
 	align-items: center;
 }
 
+.AboutPage .content h2 {
+	font-size: 1.5rem;
+}
 .AboutPage .content a {
 	background-color: transparent;
 	color: #fff;

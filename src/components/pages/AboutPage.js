@@ -21,6 +21,7 @@ class AboutPage extends React.Component {
 					<div className="content">
 						<h1>{this.props.heading}</h1>
 						<h2>{this.props.subHeading}</h2>
+						<br />
 						<p>{this.props.body}</p>
 						<br />
 						<div className="aboutButtons">
@@ -44,7 +45,4 @@ const mapStateToProps = state => ({
 	body: state.admin.about.body
 });
 
-export default connect(
-	mapStateToProps,
-	{}
-)(AboutPage);
+export default connect(mapStateToProps, {})(AboutPage);

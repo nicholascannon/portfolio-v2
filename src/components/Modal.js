@@ -12,6 +12,7 @@ class Modal extends Component {
 			open: false
 		};
 		this.openModal = () => {
+			this.props.onOpen && this.props.onOpen(); // call onOpen function if available
 			this.setState({ open: true });
 		};
 		this.closeModal = () => {

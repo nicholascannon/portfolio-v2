@@ -16,7 +16,7 @@ export default function(state = initState, action) {
 			};
 		case EDIT_PROJECT:
 			// filter the old version of the edited project out of the state
-			const projects = state.projects.filter(project => project._id !== action.payload.uuid);
+			const projects = state.projects.filter(project => project._id !== action.payload._id);
 			return {
 				...state,
 				projects: [...projects, action.payload]
