@@ -1,0 +1,27 @@
+.ProjectsPage {
+}
+
+.ProjectsPage .projectCard {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 1em;
+	margin: 1em;
+	background-color: #fafafa;
+	color: #000000;
+	border-radius: 10px;
+	width: 350px;
+}
+.ProjectsPage .projectCard hr {
+	margin-bottom: 1em;
+}
+.ProjectsPage .projectCard ul {
+	list-style-type: none;
+	padding-left: 12px;
+}
+.ProjectsPage .projectCard a {
+	padding: 0.5em;
+	color: #fff;
+	background-color: #005cb9;
+	text-decoration: none;
+}
