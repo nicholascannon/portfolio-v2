@@ -3,7 +3,8 @@
  */
 import React from 'react';
 import Page from './Page';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import QuickLinks from '../QuickLinks';
 
 import './HomePage.css';
 
@@ -15,14 +16,15 @@ const HomePage = props => {
 				<h1>Nicholas Cannon</h1>
 				<p>Software Developer</p>
 			</div>
-			<div className="quickLinks">
+			{/* <div className="quickLinks">
 				<div>
 					<Link to="/about">ABOUT</Link>
 					<Link to="/projects">PROJECTS</Link>
 					<Link to="/skills">SKILLS</Link>
 					<Link to="/contact">CONTACT</Link>
 				</div>
-			</div>
+			</div> */}
+			<QuickLinks />
 		</Page>
 	);
 };

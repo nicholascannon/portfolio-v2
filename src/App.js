@@ -88,6 +88,7 @@ class App extends React.Component {
 					<Route key="notfound" component={NotFoundPage} />
 				</Switch>
 				<div className="social-links">
+					<p>Nicholas Cannon &copy;2020</p>
 					<a
 						href="https://www.linkedin.com/in/niccannon1"
 						target="_blank"
@@ -105,9 +106,4 @@ class App extends React.Component {
 
 const mapStateToProps = state => ({});
 
-export default withRouter(
-	connect(
-		mapStateToProps,
-		{ load_user, getAbout, getProjects }
-	)(App)
-);
+export default withRouter(connect(mapStateToProps, { load_user, getAbout, getProjects })(App));

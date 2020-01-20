@@ -1,0 +1,44 @@
+.quickLinks {
+	display: flex;
+	justify-content: center;
+}
+.quickLinks > div {
+	width: 600px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	font-size: 1.5em;
+}
+.quickLinks a {
+	text-decoration: none;
+	animation: quickLinkAnim;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+}
+.quickLinks a:hover {
+	color: #005cb9;
+	animation: unset;
+	font-size: 1.6em;
+}
+@keyframes quickLinkAnim {
+	0% {
+		color: #fafafa;
+	}
+	50% {
+		color: #555555;
+	}
+	100% {
+		color: #fafafa;
+	}
+}
+
+/* homepage style */
+.HomePage .quickLinks {
+	margin-top: 10em;
+}
+
+/* Mobile sizes */
+.mobile .quickLinks {
+	margin-top: 2em;
+	height: 15em;
+}

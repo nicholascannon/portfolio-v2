@@ -38,6 +38,9 @@ header {
 .social-links span:hover {
 	color: #005cb9;
 }
+.social-links p {
+	color: #444444;
+}
 
 @media (max-width: 320px) {
 	#brand {
