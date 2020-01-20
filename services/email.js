@@ -1,7 +1,9 @@
 /**
  * Email Service
  */
+const chalk = require('chalk');
 const mail = require('@sendgrid/mail');
+console.log(`${chalk.yellow('!')} using sendgrid key ${process.env.SENDGRID_KEY}`);
 mail.setApiKey(process.env.SENDGRID_KEY);
 
 /**
