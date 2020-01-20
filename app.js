@@ -11,6 +11,7 @@ const helmet = require('helmet');
 const dotenv = require('dotenv');
 const errorhandler = require('errorhandler');
 const setupDB = require('./config/db');
+const emailService = require('./services/email');
 
 /**
  * Load environment variables from dev or prod .env file
@@ -55,8 +56,9 @@ if (process.env.NODE_ENV === 'development') {
 	app.use(errorhandler());
 	console.log(`${chalk.yellow('!')} using development error handler`);
 } else {
-	app.use((err, req, res, next) => {
+	app.use(async (err, req, res, next) => {
 		console.error(err);
+		await emailService.sendErrorEmail(err);
 		res.status(500).json({ msg: 'Server error!' });
 	});
 }

@@ -16,6 +16,19 @@ const sendContactMail = async (name, email, msg) => {
 	});
 };
 
+/**
+ * Send error email to admin
+ */
+const sendErrorEmail = async err => {
+	await mail.send({
+		to: process.env.ADMIN_EMAIL,
+		from: process.env.ADMIN_EMAIL,
+		subject: `Portfolio ERROR!`,
+		html: `<h1>Portfolio API threw an error</h1><p>${err}</p>`
+	});
+};
+
 module.exports = {
-	sendContactMail
+	sendContactMail,
+	sendErrorEmail
 };
