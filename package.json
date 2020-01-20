@@ -12,9 +12,9 @@
 		"url": "https://github.com/nicholascannon1/portfolio2.0.git"
 	},
 	"scripts": {
-		"client-start": "react-scripts start",
+		"client": "react-scripts start",
 		"client-build": "react-scripts build",
-		"server-start": "export NODE_ENV=development && nodemon app.js",
+		"server": "export NODE_ENV=development && nodemon app.js",
 		"pretty": "pretty-quick --staged",
 		"dev": "concurrently \"npm run server-start\" \"npm run client-start\" ",
 		"start": "node app.js"
