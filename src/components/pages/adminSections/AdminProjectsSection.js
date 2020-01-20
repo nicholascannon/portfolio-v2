@@ -16,9 +16,9 @@ class AdminProjectsSection extends Component {
 			name: '',
 			body: '',
 			tech: '',
-			url: ''
+			url: '',
+			msg: ''
 		};
-		this.saveModel = React.createRef();
 	}
 
 	onChange = e => {
@@ -38,8 +38,9 @@ class AdminProjectsSection extends Component {
 			uuid: '',
 			name: '',
 			body: '',
-			tech: [],
-			url: ''
+			tech: '',
+			url: '',
+			msg: 'Project Saved!'
 		});
 	};
 
@@ -56,7 +57,8 @@ class AdminProjectsSection extends Component {
 			name: '',
 			body: '',
 			tech: '',
-			url: ''
+			url: '',
+			msg: 'Project Saved!'
 		});
 	};
 
@@ -67,7 +69,8 @@ class AdminProjectsSection extends Component {
 			name: project.name,
 			body: project.body,
 			tech: project.tech.join(', '),
-			url: project.url
+			url: project.url,
+			msg: ''
 		});
 	};
 
@@ -120,6 +123,7 @@ class AdminProjectsSection extends Component {
 												value={this.state.url}
 											/>
 											<button type="submit">Save Project</button>
+											{this.state.msg !== '' ? <p>{this.state.msg}</p> : null}
 										</form>
 									</Modal>
 									<button
@@ -134,7 +138,7 @@ class AdminProjectsSection extends Component {
 						<p>No Projects</p>
 					)}
 				</div>
-				<Modal header="Add New Project" btnText="Add Project" ref={this.saveModel}>
+				<Modal header="Add New Project" btnText="Add Project">
 					<form onSubmit={this.saveProject}>
 						<label htmlFor="name">Name:</label>
 						<input type="text" name="name" id="name" onChange={this.onChange} />
@@ -145,6 +149,7 @@ class AdminProjectsSection extends Component {
 						<label htmlFor="url">URL:</label>
 						<input type="text" name="url" id="url" onChange={this.onChange} />
 						<button type="submit">Save Project</button>
+						{this.state.msg !== '' ? <p>{this.state.msg}</p> : null}
 					</form>
 				</Modal>
 			</React.Fragment>
