@@ -3,10 +3,11 @@
  */
 import { SAVE_PROJECT, EDIT_PROJECT, GET_PROJECTS, NEW_ERROR, DELETE_PROJECT } from './types';
 import axios from 'axios';
+import { API } from './globals';
 
 export const getProjects = () => dispatch => {
 	axios
-		.get('/projects/')
+		.get(API + '/projects/')
 		.then(res => dispatch({ type: GET_PROJECTS, payload: res.data }))
 		.catch(err =>
 			dispatch({
@@ -18,7 +19,7 @@ export const getProjects = () => dispatch => {
 
 export const editProject = project => (dispatch, getState) => {
 	axios
-		.put(`/projects/${project.uuid}`, project, {
+		.put(API + `/projects/${project.uuid}`, project, {
 			headers: { 'Content-Type': 'application/json', Authorization: getState().auth.token }
 		})
 		.then(res => dispatch({ type: EDIT_PROJECT, payload: res.data }))
@@ -32,7 +33,7 @@ export const editProject = project => (dispatch, getState) => {
 
 export const saveProject = project => (dispatch, getState) => {
 	axios
-		.post('/projects/', project, {
+		.post(API + '/projects/', project, {
 			headers: { 'Content-Type': 'application/json', Authorization: getState().auth.token }
 		})
 		.then(res => dispatch({ type: SAVE_PROJECT, payload: res.data }))
@@ -47,7 +48,7 @@ export const saveProject = project => (dispatch, getState) => {
 export const deleteProject = uuid => (dispatch, getState) => {
 	axios
 		.delete(
-			`/projects/${uuid}`,
+			API + `/projects/${uuid}`,
 			{},
 			{
 				headers: { 'Content-Type': 'application/json', Authorization: getState().auth.token }

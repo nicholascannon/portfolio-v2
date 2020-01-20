@@ -2,11 +2,12 @@
  * Admin Actions
  */
 import { GET_ABOUT, SAVE_ABOUT, NEW_ERROR } from './types';
+import { API } from './globals';
 import axios from 'axios';
 
 export const getAbout = () => dispatch => {
 	axios
-		.get('/about/')
+		.get(API + '/about/')
 		.then(res => dispatch({ type: GET_ABOUT, payload: res.data }))
 		.catch(err =>
 			dispatch({
@@ -19,7 +20,7 @@ export const getAbout = () => dispatch => {
 export const saveAbout = (heading, subHeading, body) => (dispatch, getState) => {
 	axios
 		.post(
-			'/about/',
+			API + '/about/',
 			{ heading, subHeading, body },
 			{ headers: { 'Content-Type': 'application/json', Authorization: getState().auth.token } }
 		)

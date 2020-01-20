@@ -11,13 +11,14 @@ import {
 	NEW_ERROR
 } from '../actions/types';
 import axios from 'axios';
+import { API } from './globals';
 
 export const load_user = () => (dispatch, getState) => {
 	dispatch({ type: LOADING });
 	const token = getState().auth.token;
 	if (token) {
 		axios
-			.get('/auth/verify', {
+			.get(API + '/auth/verify', {
 				headers: { Authorization: token, 'Content-Type': 'application/json' }
 			})
 			.then(res => dispatch({ type: LOAD_USER, payload: res.data }))
@@ -37,7 +38,11 @@ export const load_user = () => (dispatch, getState) => {
 export const login = (email, password) => dispatch => {
 	dispatch({ type: LOADING });
 	axios
-		.post('/auth/login', { email, password }, { headers: { 'Content-Type': 'application/json' } })
+		.post(
+			API + '/auth/login',
+			{ email, password },
+			{ headers: { 'Content-Type': 'application/json' } }
+		)
 		.then(res => dispatch({ type: LOGIN_SUCCESS, payload: res.data }))
 		.catch(err => {
 			dispatch({ type: LOGIN_FAIL });
