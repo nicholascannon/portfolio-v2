@@ -7,11 +7,7 @@ import axios from 'axios';
 export const sendContact = (name, email, msg) => dispatch => {
 	dispatch({ type: CONTACT_SENDING });
 	axios
-		.post(
-			'/api/contact/',
-			{ name, email, msg },
-			{ headers: { 'Content-Type': 'application/json' } }
-		)
+		.post('/contact/', { name, email, msg }, { headers: { 'Content-Type': 'application/json' } })
 		.then(() => dispatch({ type: CONTACT_SENT }))
 		.catch(err => {
 			dispatch({

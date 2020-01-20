@@ -6,7 +6,7 @@ import axios from 'axios';
 
 export const getAbout = () => dispatch => {
 	axios
-		.get('/api/about/')
+		.get('/about/')
 		.then(res => dispatch({ type: GET_ABOUT, payload: res.data }))
 		.catch(err =>
 			dispatch({
@@ -19,7 +19,7 @@ export const getAbout = () => dispatch => {
 export const saveAbout = (heading, subHeading, body) => (dispatch, getState) => {
 	axios
 		.post(
-			'/api/about/',
+			'/about/',
 			{ heading, subHeading, body },
 			{ headers: { 'Content-Type': 'application/json', Authorization: getState().auth.token } }
 		)
