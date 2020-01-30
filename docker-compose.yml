@@ -3,7 +3,7 @@ version: '3.7'
 
 services:
   web:
-    image: portfolio-web:latest
+    image: repo.treescale.com/nicholascannon1/portfolio/portfolio-web:latest
     restart: always
     labels:
       # Traefik configuration
@@ -13,7 +13,7 @@ services:
       - api
 
   api:
-    image: portfolio-api:latest
+    image: repo.treescale.com/nicholascannon1/portfolio/portfolio-api:latest
     restart: always
     labels:
       # Traefik configuration
@@ -21,4 +21,9 @@ services:
       - traefik.enabled=true
     env_file: .env
     networks:
-      - mongodb-network
+      db_net: {}
+
+networks:
+  db_net:
+    external: true
+    name: mongodb-network
