@@ -1,5 +1,5 @@
 # API container
-FROM node:latest
+FROM node:alpine
 
 WORKDIR /app
 

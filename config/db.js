@@ -3,7 +3,7 @@
  */
 const mongoose = require('mongoose');
 const chalk = require('chalk');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 const Admin = require('../models/Admin');
 const About = require('../models/About');

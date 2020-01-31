@@ -3,7 +3,7 @@
  */
 const router = require('express').Router();
 const Admin = require('../models/Admin');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const authenticate = require('../middleware/auth').authenticate;
 
 /**
