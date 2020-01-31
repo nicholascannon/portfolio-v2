@@ -4,6 +4,7 @@ version: '3.7'
 services:
   web:
     image: repo.treescale.com/nicholascannon1/portfolio/portfolio-web:latest
+    container_name: portfolio-web
     restart: always
     volumes:
       - /etc/localtime:/etc/localtime:ro
@@ -28,6 +29,7 @@ services:
 
   api:
     image: repo.treescale.com/nicholascannon1/portfolio/portfolio-api:latest
+    container_name: portfolio-api
     restart: always
     volumes:
       - /etc/localtime:/etc/localtime:ro
@@ -46,7 +48,7 @@ services:
       - 'traefik.http.routers.portfolio-api-secure.rule=Host(`api.niccannon.com`)'
       - 'traefik.http.routers.portfolio-api-secure.tls=true'
       - 'traefik.http.routers.portfolio-api-secure.tls.certresolver=http'
-      - 'traefik.http.routers.portfolio-api-secure.service=api'
+      - 'traefik.http.routers.portfolio-api-secure.service=portfolio-api'
       - 'traefik.http.services.portfolio-api.loadbalancer.server.port=8000'
       - 'traefik.docker.network=web'
 
