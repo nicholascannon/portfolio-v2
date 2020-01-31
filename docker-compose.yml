@@ -10,6 +10,8 @@ services:
       - /etc/localtime:/etc/localtime:ro
     networks:
       - web
+    security_opt:
+      - no-new-privileges:true
     depends_on:
       - api
     labels:
@@ -36,6 +38,8 @@ services:
     networks:
       - web
       - db_net
+    security_opt:
+      - no-new-privileges:true
     env_file: .env
     labels:
       # Traefik configuration
