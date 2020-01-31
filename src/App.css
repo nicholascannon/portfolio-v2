@@ -27,6 +27,9 @@ header {
 
 .social-links {
 	flex: 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 .social-links a {
 	float: right;
@@ -39,7 +42,11 @@ header {
 	color: #005cb9;
 }
 .social-links p {
-	color: #444444;
+	color: #fff;
+	display: inline;
+}
+.mobile .social-links p {
+	font-size: 0.7em;
 }
 
 @media (max-width: 320px) {

@@ -89,15 +89,17 @@ class App extends React.Component {
 				</Switch>
 				<div className="social-links">
 					<p>Nicholas Cannon &copy;2020</p>
-					<a
-						href="https://www.linkedin.com/in/niccannon1"
-						target="_blank"
-						rel="noopener noreferrer">
-						<FontAwesome name="linkedin" size="2x" />
-					</a>
-					<a href="https://github.com/nicholascannon1" target="_blank" rel="noopener noreferrer">
-						<FontAwesome name="github" size="2x" />
-					</a>
+					<div>
+						<a
+							href="https://www.linkedin.com/in/niccannon1"
+							target="_blank"
+							rel="noopener noreferrer">
+							<FontAwesome name="linkedin" size="2x" />
+						</a>
+						<a href="https://github.com/nicholascannon1" target="_blank" rel="noopener noreferrer">
+							<FontAwesome name="github" size="2x" />
+						</a>
+					</div>
 				</div>
 			</React.Fragment>
 		);

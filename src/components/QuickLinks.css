@@ -39,6 +39,7 @@
 
 /* Mobile sizes */
 .mobile .quickLinks {
-	margin-top: 2em;
+	margin-top: 4em;
 	height: 15em;
+	font-size: 0.6em;
 }
