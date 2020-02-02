@@ -17,17 +17,22 @@ services:
     labels:
       # Traefik configuration
       - 'traefik.enable=true'
+
+      # http router config
       - 'traefik.http.routers.portfolio-web.entrypoints=http'
       - 'traefik.http.routers.portfolio-web.rule=Host(`niccannon.com`)'
       - 'traefik.http.routers.portfolio-web.rule=Host(`www.niccannon.com`)'
       - 'traefik.http.middlewares.portfolio-web-https-redirect.redirectscheme.scheme=https'
       - 'traefik.http.routers.portfolio-web.middlewares=portfolio-web-https-redirect'
+
+      # https router config
       - 'traefik.http.routers.portfolio-web-secure.entrypoints=https'
       - 'traefik.http.routers.portfolio-web-secure.rule=Host(`niccannon.com`)'
       - 'traefik.http.routers.portfolio-web-secure.rule=Host(`www.niccannon.com`)'
       - 'traefik.http.routers.portfolio-web-secure.tls=true'
       - 'traefik.http.routers.portfolio-web-secure.tls.certresolver=http'
       - 'traefik.http.routers.portfolio-web-secure.service=portfolio-web'
+
       - 'traefik.http.services.portfolio-web.loadbalancer.server.port=8080'
       - 'traefik.docker.network=web'
 
@@ -46,18 +51,26 @@ services:
     labels:
       # Traefik configuration
       - 'traefik.enable=true'
+
+      # http router config
       - 'traefik.http.routers.portfolio-api.entrypoints=http'
       - 'traefik.http.routers.portfolio-api.rule=Host(`api.niccannon.com`)'
       - 'traefik.http.routers.portfolio-api.rule=Host(`www.api.niccannon.com`)'
       - 'traefik.http.middlewares.portfolio-api-https-redirect.redirectscheme.scheme=https'
       - 'traefik.http.routers.portfolio-api.middlewares=portfolio-api-https-redirect'
+
+      # https router config
       - 'traefik.http.routers.portfolio-api-secure.entrypoints=https'
       - 'traefik.http.routers.portfolio-api-secure.rule=Host(`api.niccannon.com`)'
       - 'traefik.http.routers.portfolio-api-secure.rule=Host(`www.api.niccannon.com`)'
       - 'traefik.http.routers.portfolio-api-secure.tls=true'
       - 'traefik.http.routers.portfolio-api-secure.tls.certresolver=http'
       - 'traefik.http.routers.portfolio-api-secure.service=portfolio-api'
+
+      # modifies the service automatically created for this container
       - 'traefik.http.services.portfolio-api.loadbalancer.server.port=8000'
+
+      # overrides default network used for connections to this container
       - 'traefik.docker.network=web'
 
 networks:
