@@ -3,7 +3,7 @@
 # **BUILD STAGE**
 FROM node:latest as builder
 
-WORKDIR app/
+WORKDIR /app
 COPY package*.json ./
 RUN npm ci --only=production --silent
 

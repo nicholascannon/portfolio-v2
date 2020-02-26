@@ -5,6 +5,7 @@ import { CSSTransition } from 'react-transition-group';
 import Particels from 'react-particles-js';
 import particleSettings from './particleSettings';
 import FontAwesome from 'react-fontawesome';
+import ReactGA from 'react-ga';
 
 import { load_user } from './actions/authActions';
 import { getAbout } from './actions/adminActions';
@@ -37,6 +38,8 @@ class App extends React.Component {
 		this.props.load_user();
 		this.props.getAbout();
 		this.props.getProjects();
+
+		ReactGA.pageview(window.location.pathname);
 	}
 	componentWillMount() {
 		window.addEventListener('resize', this.windowResize);
