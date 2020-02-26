@@ -9,8 +9,8 @@ RUN npm ci --only=production --silent
 
 COPY public/ public/
 COPY src/ src/
+COPY .env .env
 
-ENV SKIP_PREFLIGHT_CHECK=true
 RUN npm run client-build
 
 # **CONTAINER STAGE**
