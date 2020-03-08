@@ -50,6 +50,18 @@ app.use('/api/auth/', require('./routes/auth'));
 app.use('/api/contact/', require('./routes/contact'));
 app.use('/api/about/', require('./routes/about'));
 
+/* Health check endpoint */
+app.get('/api/health', (req, res) => {
+	// get memory usage in MB
+	const memUsage = process.memoryUsage();
+	const memStats = {};
+	for (let key in memUsage) {
+		memStats[key] = Math.round((memUsage[key] / 1024 / 1024) * 100) / 100;
+	}
+
+	res.status(200).json(memStats);
+});
+
 /**
  * Error handler
  */

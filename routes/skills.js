@@ -12,8 +12,8 @@ router.get('/', (req, res, next) => {
 	SkillTopic.find()
 		.then(skillTopics =>
 			res
-				.status(skillsTopics ? 200 : 404)
-				.json(skillTopics ? skillsTopics : { msg: 'No skills entered' })
+				.status(skillTopics ? 200 : 404)
+				.json(skillTopics ? skillTopics : { msg: 'No skills entered' })
 		)
 		.catch(err => next(err));
 });
