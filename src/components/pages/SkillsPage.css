@@ -37,11 +37,17 @@
 	padding-top: 1em;
 }
 .SkillsPage .ModalBody {
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	display: flex;
+	justify-content: space-between;
 }
-.SkillsPage .ModalBody ul {
-	padding-left: 2em;
+.SkillsPage .ModalBody div {
+	width: 100%;
+	margin: 0 2em 0 2em;
+}
+.SkillsPage .ModalBody ul li {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 }
 
 .tablet .SkillsPage .skillsTable,
@@ -55,9 +61,14 @@
 .mobile .skillsTable div p {
 	font-size: 1em;
 }
-@media (max-width: 920px) {
-	.SkillsPage .Modal {
-		margin: 3em;
-		font-size: 1em;
+@media (max-width: 1300px) {
+	.SkillsPage .ModalBody {
+		flex-direction: column;
+
+		overflow-y: scroll;
+	}
+	.SkillsPage .ModalBody div {
+		width: auto;
+		margin: 0 0 0.5em 0;
 	}
 }
