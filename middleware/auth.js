@@ -8,7 +8,7 @@ module.exports.authenticate = (req, res, next) => {
 	const token = req.get('Authorization');
 	if (token && validate.isJWT(token)) {
 		try {
-			const decoded = jwt.decode(token);
+			const decoded = jwt.verify(token, process.env.SECRET);
 			req.userEmail = decoded.email;
 			next();
 		} catch {
