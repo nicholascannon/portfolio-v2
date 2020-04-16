@@ -21,7 +21,7 @@ const SkillsPage = props => {
 				))}
 			</div>
 			<div className="rect"></div>
-			<Modal header="More skills" btnText="More skills">
+			<Modal header="More skills" btnText="MORE SKILLS">
 				<div>
 					<h3>Languages</h3>
 					<ul>

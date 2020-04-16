@@ -35,6 +35,8 @@
 
 .SkillsPage .ModalBtnContainer {
 	padding-top: 1em;
+	display: flex;
+	justify-content: center;
 }
 .SkillsPage .ModalBody {
 	display: flex;
