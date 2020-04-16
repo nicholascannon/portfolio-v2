@@ -49,16 +49,19 @@ const SkillsPage = props => {
 					<h3>Databases</h3>
 					<ul>
 						<li>
+							SQL <i>(intermediate)</i>
+						</li>
+						<li>
 							PostgresSQL <i>(intermediate)</i>
 						</li>
 						<li>
 							MongoDB <i>(novice)</i>
 						</li>
 						<li>
-							MySQL <i>(intermediate)</i>
+							MySQL <i>(beginner)</i>
 						</li>
 						<li>
-							SQLite <i>(intermediate)</i>
+							SQLite <i>(beginner)</i>
 						</li>
 					</ul>
 				</div>
@@ -95,6 +98,7 @@ const SkillsPage = props => {
 						<li>AWS</li>
 						<li>Digital Ocean</li>
 						<li>Docker</li>
+						<li>Gunicorn</li>
 						<li>NGINX</li>
 					</ul>
 				</div>
