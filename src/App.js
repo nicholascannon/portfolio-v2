@@ -68,7 +68,7 @@ class App extends React.Component {
 				<header>
 					{this.props.location.pathname !== '/' ? (
 						<Link to="/" id="brand">
-							&larr; NICHOLAS CANNON
+							NICHOLAS CANNON
 						</Link>
 					) : null}
 					<Nav />

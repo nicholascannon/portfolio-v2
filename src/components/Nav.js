@@ -35,38 +35,6 @@ class Nav extends Component {
 							<img className="navIcon" src={close} alt="close" />
 						</button>
 						<ul>
-							<li>
-								<NavLink
-									to="/about"
-									onClick={this.props.closeNav}
-									activeStyle={{ color: '#005cb9' }}>
-									About
-								</NavLink>
-							</li>
-							<li>
-								<NavLink
-									to="/projects"
-									onClick={this.props.closeNav}
-									activeStyle={{ color: '#005cb9' }}>
-									Projects
-								</NavLink>
-							</li>
-							<li>
-								<NavLink
-									to="/skills"
-									onClick={this.props.closeNav}
-									activeStyle={{ color: '#005cb9' }}>
-									Skills
-								</NavLink>
-							</li>
-							<li>
-								<NavLink
-									to="/contact"
-									onClick={this.props.closeNav}
-									activeStyle={{ color: '#005cb9' }}>
-									Contact
-								</NavLink>
-							</li>
 							{this.props.isAuthenticated ? (
 								<React.Fragment>
 									<li>
@@ -85,7 +53,19 @@ class Nav extends Component {
 										</NavLink>
 									</li>
 								</React.Fragment>
-							) : null}
+							) : (
+								<React.Fragment>
+									<li>
+										<NavLink
+											to="/admin"
+											onClick={() => {
+												this.props.closeNav();
+											}}>
+											Login
+										</NavLink>
+									</li>
+								</React.Fragment>
+							)}
 						</ul>
 					</div>
 				</CSSTransition>
