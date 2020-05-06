@@ -16,7 +16,8 @@ class AdminProjectsSection extends Component {
 			name: '',
 			body: '',
 			tech: '',
-			url: '',
+			githubUrl: '',
+			liveUrl: '',
 			msg: ''
 		};
 	}
@@ -39,7 +40,8 @@ class AdminProjectsSection extends Component {
 			name: '',
 			body: '',
 			tech: '',
-			url: '',
+			githubUrl: '',
+			liveUrl: '',
 			msg: 'Project Saved!'
 		});
 	};
@@ -57,7 +59,8 @@ class AdminProjectsSection extends Component {
 			name: '',
 			body: '',
 			tech: '',
-			url: '',
+			githubUrl: '',
+			liveUrl: '',
 			msg: 'Project Saved!'
 		});
 	};
@@ -69,7 +72,8 @@ class AdminProjectsSection extends Component {
 			name: project.name,
 			body: project.body,
 			tech: project.tech.join(', '),
-			url: project.url,
+			githubUrl: project.githubUrl,
+			liveUrl: project.liveUrl,
 			msg: ''
 		});
 	};
@@ -114,13 +118,21 @@ class AdminProjectsSection extends Component {
 												onChange={this.onChange}
 												value={this.state.tech}
 											/>
-											<label htmlFor="url">URL:</label>
+											<label htmlFor="url">GitHub URL:</label>
 											<input
 												type="text"
-												name="url"
-												id="url"
+												name="githubUrl"
+												id="githubUrl"
 												onChange={this.onChange}
-												value={this.state.url}
+												value={this.state.githubUrl}
+											/>
+											<label htmlFor="url">Live URL:</label>
+											<input
+												type="text"
+												name="liveUrl"
+												id="liveUrl"
+												onChange={this.onChange}
+												value={this.state.liveUrl}
 											/>
 											<button type="submit">Save Project</button>
 											{this.state.msg !== '' ? <p>{this.state.msg}</p> : null}
@@ -146,8 +158,10 @@ class AdminProjectsSection extends Component {
 						<input type="text" name="body" id="body" onChange={this.onChange} />
 						<label htmlFor="tech">Tech:</label>
 						<input type="text" name="tech" id="tech" onChange={this.onChange} />
-						<label htmlFor="url">URL:</label>
-						<input type="text" name="url" id="url" onChange={this.onChange} />
+						<label htmlFor="url">Github URL:</label>
+						<input type="text" name="githubUrl" id="githubUrl" onChange={this.onChange} />
+						<label htmlFor="url">Live URL:</label>
+						<input type="text" name="liveUrl" id="liveUrl" onChange={this.onChange} />
 						<button type="submit">Save Project</button>
 						{this.state.msg !== '' ? <p>{this.state.msg}</p> : null}
 					</form>
