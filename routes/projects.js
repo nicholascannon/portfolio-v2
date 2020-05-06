@@ -2,9 +2,19 @@
  * Project API routes
  */
 const router = require('express').Router();
-const validate = require('validator');
+const Joi = require('@hapi/joi');
 
 const Project = require('../models/Project');
+
+const projectSchema = Joi.object({
+	name: Joi.string().required(),
+	body: Joi.string().required(),
+	tech: Joi.array()
+		.allow(Joi.string())
+		.min(1),
+	githubUrl: Joi.string(),
+	liveUrl: Joi.string()
+});
 
 /**
  * Returns all projects in the db
@@ -21,13 +31,12 @@ router.get('/', (req, res, next) => {
  * Create new project
  */
 router.post('/', (req, res, next) => {
-	const { name, body, tech, url } = req.body;
-
-	if (!name || !body || !tech || tech.length === 0 || !url || !validate.isURL(url)) {
+	const { err } = projectSchema.validate(req.body);
+	if (err) {
 		return res.status(400).json({ msg: 'Please provide valid information about the project' });
 	}
 
-	Project.create({ name, body, tech, url })
+	Project.create({ ...req.body })
 		.then(project => res.json(project))
 		.catch(err => next(err));
 });
@@ -36,13 +45,12 @@ router.post('/', (req, res, next) => {
  * Edit an existing project
  */
 router.put('/:uuid/', (req, res, next) => {
-	const { name, body, tech, url } = req.body;
+	const { err } = projectSchema.validate(req.body);
+	if (err) {
+		return res.status(400).json({ msg: 'Please provide valid information about the project' });
+	}
 
-	// if (!name || !body || !tech || tech.length === 0 || validate.isURL(url)) {
-	// 	return res.status(400).json({ msg: 'Please provide valid information about the project' });
-	// }
-
-	Project.findByIdAndUpdate(req.params.uuid, { name, body, tech, url }, { new: true })
+	Project.findByIdAndUpdate(req.params.uuid, { ...req.body }, { new: true })
 		.then(project => res.json(project))
 		.catch(err => next(err));
 });

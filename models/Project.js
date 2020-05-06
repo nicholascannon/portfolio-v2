@@ -11,7 +11,10 @@ const projectSchema = mongoose.Schema({
 		type: mongoose.SchemaTypes.String
 	},
 	tech: [{ type: mongoose.SchemaTypes.String }],
-	url: {
+	githubUrl: {
+		type: mongoose.SchemaTypes.String
+	},
+	liveUrl: {
 		type: mongoose.SchemaTypes.String
 	}
 });
