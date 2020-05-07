@@ -44,6 +44,7 @@
 	border: 1px solid #005cb9;
 	border-radius: 4px;
 	text-align: center;
+	margin: 0.25em;
 }
 .ProjectsPage .projectCard a:hover {
 	background-color: #005cb9;
