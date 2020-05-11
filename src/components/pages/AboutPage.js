@@ -20,9 +20,11 @@ class AboutPage extends React.Component {
 					</div>
 					<div className="content">
 						<h1>{this.props.heading}</h1>
-						<h2>{this.props.subHeading}</h2>
+						<h2>
+							<em>{this.props.subHeading}</em>
+						</h2>
 						<br />
-						<p>{this.props.body}</p>
+						<p dangerouslySetInnerHTML={{ __html: this.props.body }}></p>
 						<br />
 						<div className="aboutButtons">
 							<a href={resume} target="_blank" rel="noopener noreferrer">
