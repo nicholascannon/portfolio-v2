@@ -29,68 +29,40 @@ const SkillsPage = props => {
 							Python <i>(advanced)</i>
 						</li>
 						<li>
-							JavaScript / Node.JS <i>(advanced)</i>
+							JavaScript &amp; Node.JS <i>(advanced)</i>
 						</li>
-						<li>
-							C / C++ <i>(proficient)</i>
-						</li>
-						<li>
-							HTML / CSS <i>(proficient)</i>
-						</li>
-						<li>
-							Java <i>(proficient)</i>
-						</li>
-						<li>
-							Go <i>(novice)</i>
-						</li>
+						<li>C &amp; C++</li>
+						<li>HTML &amp; CSS</li>
+						<li>Java</li>
 					</ul>
 				</div>
 				<div>
 					<h3>Databases</h3>
 					<ul>
-						<li>
-							SQL <i>(intermediate)</i>
-						</li>
-						<li>
-							PostgresSQL <i>(intermediate)</i>
-						</li>
-						<li>
-							MongoDB <i>(novice)</i>
-						</li>
-						<li>
-							MySQL <i>(beginner)</i>
-						</li>
-						<li>
-							SQLite <i>(beginner)</i>
-						</li>
+						<li>SQL</li>
+						<li>PostgresSQL</li>
+						<li>MongoDB</li>
+						<li>MySQL</li>
+						<li>SQLite</li>
 					</ul>
 				</div>
 				<div>
-					<h3>Frameworks / Libraries</h3>
+					<h3>Frameworks &amp; Libraries</h3>
 					<ul>
+						<li>Flask</li>
+						<li>Django</li>
+						<li>React &amp; Redux</li>
+						<li>ExpressJS</li>
+						<li>Numpy &amp; Pandas</li>
+						<li>Scikit-learn &amp; Tensorflow</li>
+						<li>SQLAlchemy</li>
 						<li>
-							React / Redux <i>(proficient)</i>
+							<em>And more!</em>
 						</li>
-						<li>
-							ExpressJS <i>(proficient)</i>
-						</li>
-						<li>
-							Django <i>(proficient)</i>
-						</li>
-						<li>
-							Flask <i>(proficient)</i>
-						</li>
-						<li>
-							Numpy / Pandas <i>(proficient)</i>
-						</li>
-						<li>
-							Scikit-learn <i>(novice)</i>
-						</li>
-						<li>And more!</li>
 					</ul>
 				</div>
 				<div>
-					<h3>Other</h3>
+					<h3>Misc</h3>
 					<ul>
 						<li>Git version control</li>
 						<li>Test driven development</li>

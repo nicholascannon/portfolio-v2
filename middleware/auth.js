@@ -11,7 +11,7 @@ module.exports.authenticate = (req, res, next) => {
 			const decoded = jwt.verify(token, process.env.SECRET);
 			req.userEmail = decoded.email;
 			next();
-		} catch {
+		} catch (e) {
 			return res.status(400).json({ msg: 'invalid token' });
 		}
 	} else {

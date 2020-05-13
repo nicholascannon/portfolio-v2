@@ -46,6 +46,9 @@
 	width: 100%;
 	margin: 0 2em 0 2em;
 }
+.SkillsPage .ModalBody ul {
+	padding: 0.5em 0 0.25em 0;
+}
 .SkillsPage .ModalBody ul li {
 	display: flex;
 	flex-direction: row;
