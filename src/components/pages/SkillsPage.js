@@ -34,43 +34,50 @@ const SkillsPage = props => {
 						<li>C &amp; C++</li>
 						<li>HTML &amp; CSS</li>
 						<li>Java</li>
+						<li>Golang (beginner)</li>
 					</ul>
 				</div>
 				<div>
 					<h3>Databases</h3>
 					<ul>
 						<li>SQL</li>
-						<li>PostgresSQL</li>
-						<li>MongoDB</li>
+						<li>Postgres</li>
 						<li>MySQL</li>
+						<li>MongoDB</li>
 						<li>SQLite</li>
 					</ul>
 				</div>
 				<div>
 					<h3>Frameworks &amp; Libraries</h3>
 					<ul>
-						<li>Flask</li>
-						<li>Django</li>
+						<li>Flask &amp; Django</li>
 						<li>React &amp; Redux</li>
 						<li>ExpressJS</li>
 						<li>Numpy &amp; Pandas</li>
-						<li>Scikit-learn &amp; Tensorflow</li>
+						<li>Scikit-learn </li>
+						<li>Tensorflow &amp; Keras</li>
 						<li>SQLAlchemy</li>
+						<li>Apache Airflow</li>
 						<li>
 							<em>And more!</em>
 						</li>
 					</ul>
 				</div>
 				<div>
+					<h3>Cloud / Ops</h3>
+					<ul>
+						<li>Google Cloud Platform</li>
+						<li>Digital Ocean</li>
+						<li>Git</li>
+						<li>TravisCI</li>
+						<li>Docker &amp; Docker Compose</li>
+					</ul>
+				</div>
+				<div>
 					<h3>Misc</h3>
 					<ul>
-						<li>Git version control</li>
 						<li>Test driven development</li>
 						<li>Agile development</li>
-						<li>AWS</li>
-						<li>Digital Ocean</li>
-						<li>Docker</li>
-						<li>Gunicorn</li>
 						<li>NGINX</li>
 					</ul>
 				</div>

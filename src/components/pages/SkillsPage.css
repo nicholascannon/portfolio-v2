@@ -47,12 +47,15 @@
 	margin: 0 2em 0 2em;
 }
 .SkillsPage .ModalBody ul {
-	padding: 0.5em 0 0.25em 0;
+	padding: 0.25em;
 }
 .SkillsPage .ModalBody ul li {
-	display: flex;
+	/* display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	justify-content: space-between; */
+
+	margin-left: 1em;
+	display: list-item;
 }
 
 .tablet .SkillsPage .skillsTable,
