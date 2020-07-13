@@ -50,10 +50,11 @@ const SkillsPage = props => {
 				<div>
 					<h3>Frameworks &amp; Libraries</h3>
 					<ul>
-						<li>Flask &amp; Django</li>
+						<li>Django &amp; Django-REST-Framework</li>
+						<li>Flask</li>
 						<li>React &amp; Redux</li>
 						<li>ExpressJS</li>
-						<li>Numpy &amp; Pandas</li>
+						<li>Numpy, Pandas &amp; Matplotlib</li>
 						<li>Scikit-learn </li>
 						<li>Tensorflow &amp; Keras</li>
 						<li>SQLAlchemy</li>
@@ -68,6 +69,7 @@ const SkillsPage = props => {
 					<ul>
 						<li>Google Cloud Platform</li>
 						<li>Digital Ocean</li>
+						<li>BitBucket</li>
 						<li>Git</li>
 						<li>TravisCI</li>
 						<li>Docker &amp; Docker Compose</li>
