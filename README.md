@@ -7,7 +7,7 @@ Goals:
 - Create a portfolio that will last i.e. I can make small changes in an admin panel
 - Have some kind of authentication aspect (the admin panel)
 - Use SendGrid to send contact messages to my inbox
-- Create a continuous deployment with docker and docker compose 
+- Create a continuous deployment workflow with docker and docker compose that makes deployments easy
 
 **Please check out the [site](https://www.niccannon.com/) live!!**
 
