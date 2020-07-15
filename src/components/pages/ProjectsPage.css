@@ -1,6 +1,7 @@
 .ProjectsPage {
 	display: flex;
 	flex-direction: column;
+	overflow-y: scroll;
 }
 .ProjectsPage > div {
 	min-width: 100%;
