@@ -31,10 +31,10 @@ const SkillsPage = props => {
 						<li>
 							JavaScript &amp; Node.JS <i>(advanced)</i>
 						</li>
+						<li>Golang (novice)</li>
 						<li>C &amp; C++</li>
 						<li>HTML &amp; CSS</li>
 						<li>Java</li>
-						<li>Golang (beginner)</li>
 					</ul>
 				</div>
 				<div>
@@ -52,13 +52,12 @@ const SkillsPage = props => {
 					<ul>
 						<li>Django &amp; Django-REST-Framework</li>
 						<li>Flask</li>
-						<li>React &amp; Redux</li>
 						<li>ExpressJS</li>
-						<li>Numpy, Pandas &amp; Matplotlib</li>
+						<li>React &amp; Redux</li>
+						<li>Numpy, Pandas</li>
 						<li>Scikit-learn </li>
 						<li>Tensorflow &amp; Keras</li>
 						<li>SQLAlchemy</li>
-						<li>Apache Airflow</li>
 						<li>
 							<em>And more!</em>
 						</li>
@@ -81,6 +80,7 @@ const SkillsPage = props => {
 						<li>Test driven development</li>
 						<li>Agile development</li>
 						<li>NGINX</li>
+						<li>Asynchronous programming</li>
 					</ul>
 				</div>
 			</Modal>

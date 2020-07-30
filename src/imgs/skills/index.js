@@ -9,15 +9,15 @@ import django from './django.svg';
 import docker from './docker.svg';
 import git from './git.svg';
 import sql from './sql.svg';
-import flask from './flask.svg';
+import express from './express.svg';
 
 export default [
 	{ src: python, name: 'Python' },
-	{ src: django, name: 'Django' },
-	{ src: flask, name: 'Flask' },
+	{ src: django, name: 'Django (and Flask)' },
+	{ src: docker, name: 'Docker' },
 	{ src: sql, name: 'SQL' },
 	{ src: nodejs, name: 'Node.JS' },
+	{ src: express, name: 'Express.JS' },
 	{ src: react, name: 'React' },
-	{ src: docker, name: 'Docker' },
 	{ src: git, name: 'Git' }
 ];
