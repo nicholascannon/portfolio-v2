@@ -1,9 +1,9 @@
 #rect {
 	position: relative;
-	width: calc(1.25 * 110vw);
+	width: calc(1.25 * 180vw);
 	height: 35vh;
 	background-color: #005cb9;
-	transform: translate(-15vw, 80px) rotate(1deg);
+	transform: translate(-90vw, 80px) rotate(4deg);
 	z-index: -1;
 }
 
@@ -31,6 +31,6 @@
 	font-size: 1.25em;
 }
 .mobile #rect {
-	height: 30vh;
-	transform: translate(-15vw, 40px) rotate(1deg);
+	height: 25vh;
+	transform: translate(-15vw, 35px) rotate(4deg);
 }
