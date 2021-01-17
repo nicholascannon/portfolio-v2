@@ -41,13 +41,16 @@ class App extends React.Component {
 
 		ReactGA.pageview(window.location.pathname);
 	}
+
 	componentWillMount() {
 		window.addEventListener('resize', this.windowResize);
 		this.windowResize();
 	}
+
 	componentWillUnmount() {
 		window.removeEventListener('resize', this.windowResize);
 	}
+
 	windowResize = () => {
 		if (window.innerWidth < 576) {
 			document.getElementById('App').className = 'mobile';
